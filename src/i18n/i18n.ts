@@ -4,10 +4,12 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import localeEnIN from "./locales/en-IN.json";
 import localeEnUS from "./locales/en-US.json";
 import localeHi from "./locales/hi.json";
+import localeFr from "./locales/fr.json";
+import localeEs from "./locales/es.json";
 import { t, getFixedT } from 'i18next';
 
 const locales: string[] = [
-  "en-IN", "en-US", "hi"
+  "en-IN", "en-US", "es", "hi", "fr"
 ];
 
 
@@ -18,7 +20,9 @@ i18n
     resources: {
       'en-IN': { translation: localeEnIN },
       'en-US': { translation: localeEnUS },
+      'es': { translation: localeEs },
       'hi': { translation: localeHi },
+      'fr': { translation: localeFr },
     },
     fallbackLng: 'en-US',
     detection: {

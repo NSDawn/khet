@@ -1,4 +1,5 @@
 {
-    "debug.langname": "हिन्दी",
-    "debug.locale": "हिन्दी"
+    "debug.locale": "हिन्दी",
+    "ui.settings.title": "समायोजन",
+    "ui.settings.language": "भाषा"
 }

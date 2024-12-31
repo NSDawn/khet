@@ -17,22 +17,11 @@ export default function InfoSection() {
 
     return (
         <section>
-            ₹{ capital }
+            <h2>₹ {capital}</h2>
             <br />
             <button onClick={() => setCapital(capital +1)}/>
             <br />
-            🔡 {t('debug.locale')}
 
-            <label htmlFor="language-select">Choose a language: </label>
-            <select id="language-select" onChange={handleChange} defaultValue={i18n.language}>
-                {
-                    locales.map((locale, i) => 
-                        <option value={locale}>
-                            {localesT[i]}
-                        </option>
-                    )
-                }
-            </select>
         </section>
     )
 }

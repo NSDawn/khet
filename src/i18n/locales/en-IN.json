@@ -1,4 +1,7 @@
 {
-    "debug.langname": "English",
-    "debug.locale": "English (India)"
+    "debug.locale": "English (India)",
+
+    "ui.settings.title": "Settings",
+    "ui.settings.language": "Language"
+    
 }

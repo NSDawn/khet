@@ -1,19 +1,51 @@
 #root {
   font-size: 16px;
+  overflow: hidden;
+  font-family: var(--font-regular), Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url("./assets/fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
+  font-family: NotoEmoji;
+  src: url("./assets/fonts/Noto_Emoji/NotoEmoji-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: NotoSansMono;
+  src: url("./assets/fonts/Noto_Sans_Mono/NotoSansMono-VariableFont_wdth\,wght.ttf");
 }
 
 .theme-default {
-  font-family: monospace, "Noto Emoji";
+  --font-regular: NotoSans;
+  --font-emoji: NotoEmoji;
+  --font-monospace: NotoSansMono;
   --rgb-text: #ffffff;
   --rgb-bg: #0d0430;
   background-color: var(--rgb-bg);
   color: var(--rgb-text);
 }
 
+select {
+  font-family: inherit;
+  font-size: smaller;
+  background: none;
+  border: none;
+  outline: 1px solid var(--rgb-text);
+  border-radius: 4px;
+}
+
 main {
-  width: 100vw;
-  height: 100vh;
+  transition: ease-in-out 0.25ms;
+  font-family: var(--font-regular), Arial, Helvetica, sans-serif;
   
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;  
+  
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -21,6 +53,6 @@ main {
 section {
   flex: 1;
   padding: 1rem;
-  outline: double var(--rgb-text) 2px;
+  border: double var(--rgb-text) 2px;
   
 }

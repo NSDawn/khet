@@ -12,8 +12,8 @@ createRoot(document.getElementById('root')!).render(
       <GlobalContextHandler>
         <App />
       </GlobalContextHandler> 
-    </I18nextProvider>,
-  </StrictMode>,
+    </I18nextProvider>
+  </StrictMode>
 )
 
 
