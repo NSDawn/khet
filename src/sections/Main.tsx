@@ -1,7 +1,11 @@
+import InfoSection from "./InfoSection.tsx"
+
 export default function Main() {
     return (
-        <main>
-            Butts
+        <main className="theme-default">
+            <InfoSection>
+
+            </InfoSection>
         </main>
     )
 }
