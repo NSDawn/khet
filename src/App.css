@@ -1,7 +1,7 @@
 #root {
   font-size: 16px;
   overflow: hidden;
-  font-family: var(--font-regular), Arial, Helvetica, sans-serif;
+  font-family: var(--font-monospace), monospace;
 }
 
 @font-face {
@@ -31,6 +31,7 @@
 
 select {
   font-family: inherit;
+  color: inherit;
   font-size: smaller;
   background: none;
   border: none;
@@ -40,8 +41,8 @@ select {
 
 main {
   transition: ease-in-out 0.25ms;
-  font-family: var(--font-regular), Arial, Helvetica, sans-serif;
-  
+  font-family: var(--font-monospace), monospace, var(--font-regular);
+
   position: fixed;
   top: 0; bottom: 0; left: 0; right: 0;  
   

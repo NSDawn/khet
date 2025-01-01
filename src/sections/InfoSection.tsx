@@ -1,25 +1,25 @@
 import { useGlobal } from "../GlobalContextHandler";
 import { useTranslation } from 'react-i18next';
-import i18n, { getLocales, getLocalesT } from "../i18n/i18n";
+import { useEffect } from "react";
+import DateReadout from "../components/DateReadout";
 
 export default function InfoSection() {
     
     const [capital, setCapital] = useGlobal().capital;
-    const { t } = useTranslation();
+    const [date, setDate] = useGlobal().date;
 
-    function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-        const selectedLanguage: string = event.target.value;
-        i18n.changeLanguage(selectedLanguage);
-    };
-
-    const locales = getLocales();
-    const localesT = getLocalesT();
+    const { t } = useTranslation(); 
+    const MILLISECONDS_IN_ONE_DAY = 1000 * 60 * 60 * 24;
 
     return (
         <section>
-            <h2>₹ {capital}</h2>
-            <br />
-            <button onClick={() => setCapital(capital +1)}/>
+            <h2>₹ {capital} </h2>
+            <h3> 
+                <DateReadout />
+            </h3>
+            <button onClick={() => {
+                setDate(date + MILLISECONDS_IN_ONE_DAY);
+            }}/>
             <br />
 
         </section>
