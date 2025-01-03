@@ -2,6 +2,7 @@ import { KeyboardEvent, useState } from "react";
 import "./DebugConsoleSection.css";
 import { putItem } from "../game/Inventory";
 import { useGlobal } from "../GlobalContextHandler";
+import { trySetGameConfig } from "../game/GameConfig";
 
 export default function DebugConsoleSection() {
 
@@ -36,12 +37,31 @@ export default function DebugConsoleSection() {
         switch (cmd[0]) {
             case "inv" : 
                 if (cmd.length !== 3) {
-                    return "smth is wrong bro<br/>usage: inv [itemId] [quantity]"
+                    return "i don't understand sis<br/>usage: inv [itemId] [quantity]"
                 }
-                putItem(G, cmd[1], parseInt(cmd[2]));
+                if (!putItem(G, cmd[1], parseInt(cmd[2]))) return "something went wrong, boss."
                 return "done.";
+            case "config" : 
+                if (cmd.length !== 3) {
+                    return "i don't understand sis<br/>usage: config [configId] [value]"
+                }
+                let val: string | number | boolean | null;
+                if (cmd[2] === "null") {
+                    val = null;
+                } else if (cmd[2] === "true") {
+                    val = true;
+                } else if (cmd[2] === "false") {
+                    val = false;
+                } else if (!cmd[2].split("").some((c) => "1234567890.".includes(c))) {
+                    if (cmd[2].includes(".")) { val = parseFloat(cmd[2])}
+                    else (val = parseInt(cmd[2]))
+                } else {
+                    val = cmd[2];
+                }
+                if (!trySetGameConfig(G, cmd[1], val)) {return "that game config don't seem to exist"}
+                return "sounds good, queen";
             default: 
-                return "cmd[0] not understood";
+                return "girl i dunno that command";
         }
     }
     

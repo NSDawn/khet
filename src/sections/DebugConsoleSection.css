@@ -3,6 +3,7 @@ div.debug-console-history {
     overflow: scroll;
     background: none;
     color: var(--rgb-text);
+    font-size: x-small;
     outline: solid var(--rgb-text) 1px;
     padding: 0.25rem 0.5rem;
 }

@@ -12,10 +12,13 @@ export function getDefaultGameConfig(): GameConfig {
     return DefaultGameConfig;
 }
 
-export function trySetGameConfig(key: string, value: any): boolean {
-    const [config, setConfig] = useGlobal().gameConfig;
+export function trySetGameConfig(G: GlobalSingleton, key: string, value: any): boolean {
+    const [config, setConfig] = G.gameConfig;
     if (key in config) {
-        setConfig({...config, key: value} as GameConfig);
+        // ik what i'm doing mr.typescript
+        const newConfig: any = {...config};
+        newConfig[key] = value; 
+        setConfig(newConfig as GameConfig);
         return true;
     }
     return false;
