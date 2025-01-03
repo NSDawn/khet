@@ -1,0 +1,7 @@
+{
+    "locale": "en-IN",
+    "unitTemperature": "Celsius",
+
+    "debug": true,
+    "showDebugConsole": true
+}

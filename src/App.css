@@ -33,6 +33,7 @@ select {
   font-family: inherit;
   color: inherit;
   font-size: smaller;
+  height: 1.25rem;
   background: none;
   border: none;
   outline: 1px solid var(--rgb-text);
@@ -40,7 +41,6 @@ select {
 }
 
 main {
-  transition: ease-in-out 0.25ms;
   font-family: var(--font-monospace), monospace, var(--font-regular);
 
   position: fixed;
@@ -49,11 +49,54 @@ main {
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   gap: 1rem;
+
 }
 section {
   flex: 1;
-  padding: 1rem;
-  border: double var(--rgb-text) 2px;
+ 
+  padding: 2rem 1rem;
+  outline: double var(--rgb-text) 2px;
+}
+button, button:focus {
+  all: unset;
+  font-size: smaller;
+  background: none;
+  color: var(--rgb-text);
+  outline: solid var(--rgb-text) 1px;
+  padding: 0.5rem;
+  line-height: 1em;
+  border-radius: 4px;
+  transition: ease-in-out 0.25s;
   
+  &:hover {
+    outline: solid var(--rgb-text) 3px;
+    transform: scale(1.15);
+    
+  }
+  &.selected {
+    outline: solid var(--rgb-text) 3px;
+    transform: rotate(30deg);
+  }
+  
+
+  &.emoji-icon {
+    font-size: inherit;
+  }
+}
+
+input {
+  all: unset;
+  font-size: smaller;
+  background: none;
+  color: var(--rgb-text);
+  outline: solid var(--rgb-text) 1px;
+  padding: 0.25rem 0.5rem;
+  line-height: 1rem;
+  border-radius: 4px;
+}
+.emoji-icon {
+  font-family: var(--font-emoji) !important;
+  font-weight: 700;
 }

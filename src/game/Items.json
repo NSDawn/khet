@@ -1,0 +1,33 @@
+{
+    
+    "wheat": {
+        "itemId": "wheat",
+        "icon": "🌾",
+        "tags": ["isCrop", "isCropGrain", "canSell", "canEat"]
+    },
+    "rice": {
+        "itemId": "rice",
+        "icon": "🌾",
+        "tags": ["isCrop", "isCropGrain", "canSell", "canEat"]
+    },
+    "egg": {
+        "itemId": "egg",
+        "icon": "🥚",
+        "tags": ["isAnimalProduct", "canSell", "canEat"]
+    },
+    "diesel" : {
+        "itemId": "template",
+        "icon": "⛽",
+        "tags": ["canSell"]
+    },
+    "missing" : {
+        "itemId": "template",
+        "icon": "🤔",
+        "tags": ["debug"]
+    },
+    "template" : {
+        "itemId": "template",
+        "icon": "",
+        "tags": ["debug", "template"]
+    }
+}

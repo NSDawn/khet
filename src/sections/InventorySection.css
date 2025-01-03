@@ -1,0 +1,27 @@
+.inventory-panel {
+    outline: solid var(--rgb-text) 1px;
+    padding: 1rem;
+    & ol {
+        outline: solid var(--rgb-text) 1px;
+
+        padding: 1rem;
+        & li {
+            display: flex;
+            list-style-type: none;
+            & > span {
+                text-align: left;
+                &.icon {
+                    width: 1.5rem;
+                }
+                &.item-name {
+                    width: 100%;
+                }
+                &.quantity {
+                    width: 2rem;
+                    text-align: right;
+                }
+            }
+            
+        }
+    }
+}

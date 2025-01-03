@@ -16,12 +16,10 @@ export default function InfoSection() {
             <h2>₹ {capital} </h2>
             <h3> 
                 <DateReadout />
+                <button onClick={() => {
+                    setDate(date + MILLISECONDS_IN_ONE_DAY);
+                }}/>
             </h3>
-            <button onClick={() => {
-                setDate(date + MILLISECONDS_IN_ONE_DAY);
-            }}/>
-            <br />
-
         </section>
     )
 }

@@ -54,6 +54,10 @@
     "ui.calendar.weekday.3": "Wednesday",
     "ui.calendar.weekday.4": "Thursday",
     "ui.calendar.weekday.5": "Friday",
-    "ui.calendar.weekday.6": "Saturday"
+    "ui.calendar.weekday.6": "Saturday",
 
+    "item.missing": "ItemMissing",
+    "item.wheat": "Wheat",
+    "item.diesel": "Diesel",
+    "": ""
 }
