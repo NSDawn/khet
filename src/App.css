@@ -51,18 +51,17 @@ main {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 1rem;
-
+  overflow: scroll;
 }
 section {
   flex: 1;
- 
   padding: 2rem 1rem;
   outline: double var(--rgb-text) 2px;
 }
 button, button:focus {
   all: unset;
   font-size: smaller;
-  background: none;
+  background: var(--rgb-bg);
   color: var(--rgb-text);
   outline: solid var(--rgb-text) 1px;
   padding: 0.5rem;
@@ -79,9 +78,9 @@ button, button:focus {
     outline: solid var(--rgb-text) 3px;
     transform: rotate(30deg);
   }
-  
 
   &.emoji-icon {
+    font-family: var(--font-emoji) !important;
     font-size: inherit;
   }
 }
@@ -99,4 +98,8 @@ input {
 .emoji-icon {
   font-family: var(--font-emoji) !important;
   font-weight: 700;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
 }

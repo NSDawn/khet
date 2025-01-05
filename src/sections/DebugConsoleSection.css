@@ -7,3 +7,6 @@ div.debug-console-history {
     outline: solid var(--rgb-text) 1px;
     padding: 0.25rem 0.5rem;
 }
+input.debug-console-input {
+    width: 80%;
+}

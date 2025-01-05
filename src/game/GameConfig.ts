@@ -4,6 +4,7 @@ import DefaultGameConfig from "./DefaultGameConfig.json";
 export type GameConfig = {
     locale: string,
     unitTemperature: string, // "Celsius" || "Fahrenheit" || "Kelvin"
+    numberFormat: string, // "Indian" || "Anglo" || "European"
     debug: boolean,
     showDebugConsole: boolean;
 }

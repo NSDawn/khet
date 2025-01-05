@@ -1,12 +1,13 @@
 import { useState, useEffect, useTransition } from "react";
 import { useGlobal } from "../GlobalContextHandler";
-import { getItem } from "../game/ItemTypes";
+import { getItem, checkItemTag, getSellData, getPriceFromDate } from "../game/ItemTypes";
 import { useTranslation } from "react-i18next";
 
 export default function InventoryPanel() {
 
     const { t } = useTranslation();
     const [inventory, _] = useGlobal().inventory;
+    const [date, __] = useGlobal().dateJSReadOnly;
     const [mode, setMode] = useState(""); // "" is default state
     const modeButtons = [
         { mode: "sell", icon: "💸" }
@@ -46,6 +47,21 @@ export default function InventoryPanel() {
                             <span className="item-name">
                                 {t(`item.${itemInstance.itemId}`)}
                             </span>
+                            { mode == "sell" && checkItemTag(itemInstance.itemId, "canSell") ?
+                                <>
+                                    <span className="price">
+                                        {t(`@₹${getPriceFromDate(itemInstance.itemId, date, false)}`)}
+                                    </span>
+                                    { itemInstance.quantity > 10 ? 
+                                        <button className="sell-all-button emoji-icon">
+                                        👐
+                                        </button>
+                                    : null}
+                                    <button className="sell-1-button emoji-icon">
+                                        👍
+                                    </button>
+                                </>
+                            : null}
                             <span className="quantity">
                                 {itemInstance.quantity}
                             </span>

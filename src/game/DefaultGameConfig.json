@@ -1,7 +1,7 @@
 {
     "locale": "en-IN",
-    "unitTemperature": "Celsius",
-
+    "unitTemperature": "celsius",
+    "numberFormat": "indian",
     "debug": true,
     "showDebugConsole": true
 }

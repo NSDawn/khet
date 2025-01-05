@@ -1,0 +1,27 @@
+{
+    "wheat" : {
+        "itemId": "wheat",
+        "baseSellPrice": 34,
+        "baseBuyPrice": 43
+    },
+    "rice" : {
+        "itemId": "rice",
+        "baseSellPrice": 32,
+        "baseBuyPrice": 40,
+        "demandVariance": "demandDualKharifCrop",
+        "demandVarianceScalar": 1,
+        "fluctuationVariance": "fluctuationLow",
+        "fluctuationVarianceOffsetSeed": 6,
+        "fluctuationVarianceScalar": 1
+    },
+    "diesel" : {
+        "itemId": "diesel",
+        "baseSellPrice": 90,
+        "baseBuyPrice": 1
+    },
+    "missing" : {
+        "itemId": "missing",
+        "baseSellPrice": 0,
+        "baseBuyPrice": 0
+    }
+}

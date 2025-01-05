@@ -1,13 +1,18 @@
 .inventory-panel {
     outline: solid var(--rgb-text) 1px;
     padding: 1rem;
+    
+        
+    
     & ol {
         outline: solid var(--rgb-text) 1px;
-
+        
         padding: 1rem;
         & li {
             display: flex;
+            gap: 0.5rem;
             list-style-type: none;
+            line-height: 1.5rem;
             & > span {
                 text-align: left;
                 &.icon {
@@ -15,13 +20,19 @@
                 }
                 &.item-name {
                     width: 100%;
+                    min-width: 8rem;
                 }
                 &.quantity {
-                    width: 2rem;
+                    width: 3rem;
                     text-align: right;
                 }
+                
+            }
+            & button {
+                padding: 0;
             }
             
         }
     }
 }
+

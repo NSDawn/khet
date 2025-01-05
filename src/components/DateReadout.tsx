@@ -23,7 +23,7 @@ export default function DateReadout() {
     const { t } = useTranslation(); 
     
     return (
-        <>
+        <span className="white-space-nowrap">
             {
                 t("ui.calendar.date.template")
                     .replace("$$[day]", t(`ui.calendar.day.${day}`))
@@ -32,6 +32,6 @@ export default function DateReadout() {
                     .replace("$$[year]", `${year}`)
                     
             }
-        </>
+        </span>
     )
 }
