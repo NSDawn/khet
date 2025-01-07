@@ -1,0 +1,49 @@
+.inventory-panel {
+    outline: solid var(--rgb-text) 1px;
+    padding: 0.5rem;
+        
+    & ol {
+        outline: solid var(--rgb-text) 1px;
+        
+        padding: 0.5rem;
+        & li {
+            display: flex;
+            gap: 0.5rem;
+            list-style-type: none;
+            padding: 0 0.5rem;
+            border-radius: 4px;
+            & > span {
+                text-align: left;
+                &.icon {
+                    width: 1.5rem;
+                }
+                &.item-name {
+                    width: 100%;
+                    min-width: 8rem;
+                }
+                &.quantity {
+                    width: 3rem;
+                    text-align: right;
+                }
+                
+            }
+            & button {
+                padding: 0;
+            }
+            &:hover {
+                background-color: var(--rgb-text);
+                color: var(--rgb-bg);
+            }
+        }
+    }
+    & button {
+        &.selected {
+            &.up {
+                transform: translateY(-0.25rem);
+            }
+            &.down {
+                transform: translateY(0.25rem);
+            }
+        }
+    }
+}

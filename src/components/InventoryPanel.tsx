@@ -4,6 +4,7 @@ import { getItem, checkItemTag, getSellData, getPriceFromDate } from "../game/It
 import { useTranslation } from "react-i18next";
 import { Inventory } from "../game/Inventory";
 import { State } from "../GlobalContextHandler";
+import "./InventoryPanel.css";
 
 export default function InventoryPanel(props: {inventory: State<Inventory>}) {
 
@@ -12,7 +13,9 @@ export default function InventoryPanel(props: {inventory: State<Inventory>}) {
     const [date, __] = useGlobal().dateJSReadOnly;
     const [mode, setMode] = useState(""); // "" is default state
     const modeButtons = [
-        { mode: "sell", icon: "💸" }
+        { mode: "up", icon: "🔼" },
+        { mode: "down", icon: "🔽" },
+     //   { mode: "sell", icon: "💸" },
     ];
     const [tooltipData, setTooltipData] = useGlobal().tooltipData;
     
@@ -30,7 +33,7 @@ export default function InventoryPanel(props: {inventory: State<Inventory>}) {
                 {
                     modeButtons.map((v, i) => 
                         <button 
-                            className={`emoji-icon ${mode == v.mode ? "selected" : ""}`}
+                            className={`emoji-icon ${v.mode} ${mode == v.mode ? "selected" : ""}`}
                             onClick={() => {clickModeButton(v.mode)}}
                             key={`${i}`}
                         >
@@ -45,7 +48,7 @@ export default function InventoryPanel(props: {inventory: State<Inventory>}) {
                     inventory.map((itemInstance, i) => 
                         <li 
                             key={`${i}`} 
-                            onMouseMove={(e) => setTooltipData({...tooltipData, type: "inventoryItem", id: itemInstance.itemId, pageX: e.pageX, pageY: e.pageY, enabled: true})}
+                            onMouseMove={(e) => setTooltipData({...tooltipData, type: "inventoryItem", id: itemInstance.itemId, otherData: [itemInstance.quantity.toString()], pageX: e.pageX, pageY: e.pageY, enabled: true})}
                             onMouseOut={() => setTooltipData({...tooltipData, enabled: false})}
                         >
                             <span className="icon emoji-icon">

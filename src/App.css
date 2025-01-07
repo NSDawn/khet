@@ -84,7 +84,6 @@ button, button:focus {
   }
   &.selected {
     outline: solid var(--rgb-text) 3px;
-    transform: rotate(30deg);
   }
 
   &.emoji-icon {

@@ -1,8 +1,19 @@
 section.tooltip {
     position: absolute;
     display: none;
+    white-space: wrap;
+    min-width: 5rem;
+    width: fit-content;
+    & h2 {
+        margin: 0;
+    }
     &.enabled {
         display: block;
-        
+        max-width: 15rem;
+    }
+    & p {
+        all: unset;
+        font-size: smaller;
+        font-style: italic;
     }
 }

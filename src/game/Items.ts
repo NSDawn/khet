@@ -9,9 +9,10 @@ export type ItemInstance = {
 }
 
 export function makeItemInstance(itemId: string, quantity: number): ItemInstance {
-    let validItemId = ItemRef[itemId] ? itemId : missingItemId;
+    const validItemId = ItemRef[itemId] ? itemId : missingItemId;
+    const validQuantity = quantity <= 0 ? 1 : quantity;
     return (
-        { "itemId": validItemId, "quantity": quantity }
+        { "itemId": validItemId, "quantity": validQuantity }
     )
 }
 

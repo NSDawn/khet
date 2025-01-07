@@ -19,6 +19,14 @@
         "baseSellPrice": 90,
         "baseBuyPrice": 1
     },
+    "goldBullion" : {
+        "itemId": "goldBullion",
+        "baseSellPrice": 7841,
+        "baseBuyPrice": 8043,
+        "fluctuationVariance": "fluctuationHigh",
+        "fluctuationVarianceOffsetSeed": 2,
+        "fluctuationVarianceScalar": 43
+    },
     "missing" : {
         "itemId": "missing",
         "baseSellPrice": 0,

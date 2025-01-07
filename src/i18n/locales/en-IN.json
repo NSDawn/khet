@@ -8,7 +8,7 @@
     "ui.settings.unitTemperature.fahrenheit": "Fahrenheit",
     "ui.settings.unitTemperature.kelvin": "Kelvin",
     "ui.settings.numberFormat" : "Number Format",
-    "ui.settings.numberFormat.indian" : "Default (Indian)",
+    "ui.settings.numberFormat.indian" : "Indian",
     "ui.settings.numberFormat.anglo" : "Anglo",
     "ui.settings.numberFormat.european" : "European",
 
@@ -67,15 +67,21 @@
     "ui.inventory.farmhouseL0.h": "Basic Farmhouse",
 
     "item.missing": "Missing Item",
+    "item.missing.flavor": "How do you have this...?",
     "item.wheat": "Wheat",
+    "item.wheat.flavor": "A common grain often grown in colder months. Often milled into flour.",
     "item.diesel": "Diesel",
     "item.rice": "Rice",
+    "item.goldBullion": "Gold Bullion",
+    "item.goldBullion.flavor": "Shiny...!",
+    "item.rice.flavor": "A staple grain suitable for wet and dry conditions. Delicious and nutritionally complete.",
     "item.group.botanical": "Botanical Product",
     "item.group.animal": "Animal Product",
     "item.group.industrial": "Industrial Product",
-    "item.group.missing": "Questionable Product",
+    "item.group.miscellaneous": "Miscellaneous",
+    "item.group.missing": "Questionable Item",
     "item.subgroup.grain": "Grain",
-    "item.subgroup.missing": "How did you get this?",
+    "item.subgroup.missing": "Missing",
 
     "": ""
 }
