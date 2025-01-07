@@ -1,6 +1,7 @@
 import { PropsWithChildren, createContext, useContext, useState, useEffect } from "react";
-import { ItemInstance, makeItemInstance } from "./game/ItemTypes";
+import { ItemInstance, makeItemInstance } from "./game/Items";
 import { GameConfig, getDefaultGameConfig } from "./game/GameConfig";
+import { getDefaultTooltipData, TooltipData } from "./sections/TooltipSection";
 
 const GlobalContext = createContext<GlobalSingleton>(null as unknown as GlobalSingleton);
 
@@ -13,13 +14,18 @@ function GlobalContextHandler(props: PropsWithChildren) {
         dateJSReadOnly[1](new Date(date[0]))
     }, [date[0]])
 
-    const inventory = useState(
+    const tooltipData: State<TooltipData> = useState(getDefaultTooltipData());
+
+    const farmhouseInventory = useState(
         [
             makeItemInstance("diesel", 99), 
             makeItemInstance("rice", 2),
             makeItemInstance("sgloobis", -1),
         ]
     );
+
+    const farmhouseInventoryId = useState("farmhouseL0");
+
     const gameConfig = useState(getDefaultGameConfig());
     
     
@@ -28,7 +34,9 @@ function GlobalContextHandler(props: PropsWithChildren) {
             "capital": capital,
             "date": date,
             "dateJSReadOnly": dateJSReadOnly,
-            "inventory": inventory,
+            "tooltipData": tooltipData,
+            "farmhouseInventory": farmhouseInventory,
+            "farmhouseInventoryId": farmhouseInventoryId,
             "gameConfig": gameConfig
         }}>
             {props.children}
@@ -42,14 +50,17 @@ export type GlobalSingleton = {
     date: State<number>,
     dateJSReadOnly: State<Date>,
     capital: State<number>,
-    inventory: State<ItemInstance[]>,
+    tooltipData: State<TooltipData>,
+    farmhouseInventory: State<ItemInstance[]>,
+    farmhouseInventoryId: State<string>,
     gameConfig: State<GameConfig>
 };
 
 export type SaveableGlobalSingleton = {
     date: State<number>,
     capital: State<number>,
-    inventory: State<ItemInstance[]>,
+    farmhouseInventory: State<ItemInstance[]>,
+    farmhouseInventoryId: State<string>,
     gameConfig: State<GameConfig>
 }
 

@@ -1,0 +1,61 @@
+{
+    
+    "wheat": {
+        "itemId": "wheat",
+        "icon": "🌾",
+        "tags": ["canSell", "canEat"],
+        "groupSet": [
+            {
+                "groupId": "botanical",
+                "subgroupSet": ["grain"]
+            }
+        ]
+    },
+    "rice": {
+        "itemId": "rice",
+        "icon": "🌾",
+        "tags": ["canSell", "canEat"],
+        "groupSet": [
+            {
+                "groupId": "botanical",
+                "subgroupSet": ["grain"]
+            }
+        ]
+    },
+    "egg": {
+        "itemId": "egg",
+        "icon": "🥚",
+        "tags": ["canSell", "canEat"],
+        "groupSet": [
+            {
+                "groupId": "animal"
+            }
+        ]
+    },
+    "diesel" : {
+        "itemId": "template",
+        "icon": "⛽",
+        "tags": ["canSell"],
+        "groupSet": [
+            {
+                "groupId": "industrial"
+            }
+        ]
+    },
+    "missing" : {
+        "itemId": "missing",
+        "icon": "🤔",
+        "tags": ["missing", "debug"],
+        "groupSet": [
+            {
+                "groupId": "missing",
+                "subgroupSet": ["missing"]
+            }
+        ]
+    },
+    "template" : {
+        "itemId": "template",
+        "icon": "",
+        "tags": ["debug", "template"]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "farmhouseL0": { 
+        "inventoryId": "farmhouseL0",
+        "quantityLimit": 500
+    },
+    "siloL0": {
+        "inventoryId": "siloL0",
+        "idLimit": 8,
+        "quantityLimit": 10000,
+        "filter": {
+            "mode": "whitelist",
+            "itemGroupingList": [{"groupId": "botanical"}]
+        } 
+    }
+}

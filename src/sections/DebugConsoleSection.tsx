@@ -1,8 +1,9 @@
 import { KeyboardEvent, useState } from "react";
 import "./DebugConsoleSection.css";
-import { putItem } from "../game/Inventory";
+import { putItem, putItemNaively } from "../game/Inventory";
 import { useGlobal } from "../GlobalContextHandler";
 import { trySetGameConfig } from "../game/GameConfig";
+import { makeItemInstance } from "../game/Items";
 
 export default function DebugConsoleSection() {
 
@@ -39,7 +40,7 @@ export default function DebugConsoleSection() {
                 if (cmd.length !== 3) {
                     return "i don't understand sis<br/>usage: inv [itemId] [quantity]"
                 }
-                if (!putItem(G, cmd[1], parseInt(cmd[2]))) return "something went wrong, boss."
+                if (!putItemNaively(G.farmhouseInventory, makeItemInstance(cmd[1], parseInt(cmd[2])))) return "something went wrong, boss."
                 return "done.";
             case "config" : 
                 if (cmd.length == 1) {

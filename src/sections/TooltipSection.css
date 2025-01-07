@@ -1,0 +1,8 @@
+section.tooltip {
+    position: absolute;
+    display: none;
+    &.enabled {
+        display: block;
+        
+    }
+}

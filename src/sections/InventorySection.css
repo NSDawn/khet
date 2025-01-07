@@ -1,18 +1,18 @@
 .inventory-panel {
     outline: solid var(--rgb-text) 1px;
-    padding: 1rem;
-    
+    padding: 0.5rem;
         
     
     & ol {
         outline: solid var(--rgb-text) 1px;
         
-        padding: 1rem;
+        padding: 0.5rem;
         & li {
             display: flex;
             gap: 0.5rem;
             list-style-type: none;
-            line-height: 1.5rem;
+            padding: 0 0.5rem;
+            border-radius: 4px;
             & > span {
                 text-align: left;
                 &.icon {
@@ -31,7 +31,10 @@
             & button {
                 padding: 0;
             }
-            
+            &:hover {
+                background-color: var(--rgb-text);
+                color: var(--rgb-bg);
+            }
         }
     }
 }

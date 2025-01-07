@@ -52,10 +52,18 @@ main {
   flex-direction: row;
   gap: 1rem;
   overflow: scroll;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 section {
   flex: 1;
-  padding: 2rem 1rem;
+  min-width: fit-content;
+  padding: 1rem;
+  background: var(--rgb-bg);
   outline: double var(--rgb-text) 2px;
 }
 button, button:focus {
@@ -102,4 +110,20 @@ input {
 
 .white-space-nowrap {
   white-space: nowrap;
+}
+
+h1, h2, h3, h4 {
+  all: unset;
+  display: block;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.25rem;
 }

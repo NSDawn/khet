@@ -1,6 +1,6 @@
 import { GlobalSingleton } from '../GlobalContextHandler';
-import __Items from './Items.json';
-const Items: Record<string, Item> = __Items;
+import __ItemRef from './ItemRef.json';
+const ItemRef: Record<string, Item> = __ItemRef;
 const missingItemId: string = "missing";
 
 export type ItemInstance = {
@@ -9,7 +9,7 @@ export type ItemInstance = {
 }
 
 export function makeItemInstance(itemId: string, quantity: number): ItemInstance {
-    let validItemId = Items[itemId] ? itemId : missingItemId;
+    let validItemId = ItemRef[itemId] ? itemId : missingItemId;
     return (
         { "itemId": validItemId, "quantity": quantity }
     )
@@ -18,12 +18,45 @@ export function makeItemInstance(itemId: string, quantity: number): ItemInstance
 export type Item = { 
     itemId:                 string;
     icon:                   string;
-    tags:                   string[];
+    groupSet?:            GroupSet;
+    tags:                 string[];
+}
+type GroupSet = Group[];
+export type Grouping = {
+    groupId: string;
+    subgroupId?: string,
+}
+type Group = {
+    groupId: string,
+    subgroupSet?: SubgroupSet;
+}
+type SubgroupSet = string[];
+
+export function checkItem(itemId: string): boolean {
+    return (!!ItemRef[itemId]);
 }
 
 export function getItem(itemId: string): Item {
-    let validItemId = Items[itemId] ? itemId : missingItemId;
-    return (Items[validItemId]);
+    let validItemId = ItemRef[itemId] ? itemId : missingItemId;
+    return (ItemRef[validItemId]);
+}
+
+export function getPrimaryGrouping(itemId: string): Grouping {
+    const gs = (getItem(itemId).groupSet || ItemRef["missing"].groupSet) as GroupSet; 
+    return {
+        groupId: gs[0].groupId,
+        subgroupId: gs[0].subgroupSet ? gs[0].subgroupSet[0] : undefined
+    }
+}
+
+export function checkGrouping(itemId: string, grouping: Grouping): boolean {
+    if (!checkItem(itemId)) return false;
+    const item = getItem(itemId);
+    if (!item.groupSet) return false;
+    if (!item.groupSet.some((g) => g.groupId == grouping.groupId)) return false;
+    if (!grouping.subgroupId) return true;
+    if (!item.groupSet.some((g) => g.groupId == grouping.groupId || g.subgroupSet?.includes(grouping.subgroupId as string))) return true;
+    return false;
 }
 
 export function checkItemTag(itemId: string, tag: string): boolean {
@@ -45,8 +78,8 @@ export function getSellData(itemId: string): SellData {
     return SellDataRef[itemId] || SellDataRef["missing"];
 }
 
-export function getSellVariance(sellVarianceId: string): SellVariance {
-    return SellVarianceRef[sellVarianceId] || SellVarianceRef["zero"];
+export function getDailyVariance(sellVarianceId: string): DailyVariance {
+    return DailyVarianceRef[sellVarianceId] || DailyVarianceRef["zero"];
 }
 
 export function getPrice(itemId: string, month: number = 0, day: number = 0, yearOffset: number = 0, getBuyPrice: boolean = false): number {
@@ -54,10 +87,10 @@ export function getPrice(itemId: string, month: number = 0, day: number = 0, yea
     if (getBuyPrice && sellData.baseBuyPrice == null) return 2 * getPrice(itemId, month, day, yearOffset, false);
 
     const basePrice = getBuyPrice ? sellData.baseBuyPrice as number : sellData.baseSellPrice;
-    let demandVarianceSum = sellData.demandVariance ? getSellVariance(sellData.demandVariance)[month][day - 1] : 0;
+    let demandVarianceSum = sellData.demandVariance ? getDailyVariance(sellData.demandVariance)[month][day - 1] : 0;
     demandVarianceSum *= sellData.demandVarianceScalar || 1;
     const perYearFluctuationVarianceIdxOffset = 3;
-    const fluctuationVariance = getSellVariance(sellData.fluctuationVariance || "zero");
+    const fluctuationVariance = getDailyVariance(sellData.fluctuationVariance || "zero");
     const fluctuationVarianceIdxOffset = (sellData.fluctuationVarianceOffsetSeed || 0) + (perYearFluctuationVarianceIdxOffset * yearOffset);
     const fluctuationVarianceIdx = (fluctuationVarianceIdxOffset + (day - 1)) % fluctuationVariance[month].length;
     let fluctuationVarianceSum = sellData.fluctuationVariance ? fluctuationVariance[month][fluctuationVarianceIdx] : 0;
@@ -72,9 +105,9 @@ export function getPriceFromDate(itemId: string, date: Date, getBuyPrice: boolea
 import __SellDataRef from "./SellDataRef.json";
 const SellDataRef: Record<string, SellData> = __SellDataRef;
 
-export type SellVariance = number[][];
-import __SellVarianceRef from "./SellVarianceRef.json";
-const SellVarianceRef: Record<string, SellVariance> = __SellVarianceRef;
+export type DailyVariance = number[][];
+import __DailyVarianceRef from "./DailyVarianceRef.json";
+const DailyVarianceRef: Record<string, DailyVariance> = __DailyVarianceRef;
 
 export type EatData = {
     itemId:             string;

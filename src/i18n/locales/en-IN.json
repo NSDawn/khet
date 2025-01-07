@@ -12,7 +12,6 @@
     "ui.settings.numberFormat.anglo" : "Anglo",
     "ui.settings.numberFormat.european" : "European",
 
-
     "ui.calendar.date.template": "$$[weekday], $$[day] $$[month] $$[year]",
     "ui.calendar.month.0": "January",
     "ui.calendar.month.1": "February",
@@ -65,9 +64,18 @@
     "ui.calendar.weekday.5": "Friday",
     "ui.calendar.weekday.6": "Saturday",
 
-    "item.missing": "ItemMissing",
+    "ui.inventory.farmhouseL0.h": "Basic Farmhouse",
+
+    "item.missing": "Missing Item",
     "item.wheat": "Wheat",
     "item.diesel": "Diesel",
     "item.rice": "Rice",
+    "item.group.botanical": "Botanical Product",
+    "item.group.animal": "Animal Product",
+    "item.group.industrial": "Industrial Product",
+    "item.group.missing": "Questionable Product",
+    "item.subgroup.grain": "Grain",
+    "item.subgroup.missing": "How did you get this?",
+
     "": ""
 }
