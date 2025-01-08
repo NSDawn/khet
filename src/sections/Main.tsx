@@ -19,7 +19,7 @@ export default function Main() {
         <main className="theme-default">
             <TooltipSection />
             <InfoSection />
-            <InventorySection inventory={G.farmhouseInventory} inventoryId={G.farmhouseInventoryId[0]} />
+            <InventorySection inventory={G.farmhouseInventory} inventoryId={G.farmhouseInventoryId} />
             <SettingsSection />
             {
                 gameConfig.debug && gameConfig.showDebugConsole ? 

@@ -1,4 +1,9 @@
 {
+    "personalL0": { 
+        "inventoryId": "personalL0",
+        "idLimit": 3,
+        "quantityLimit": 50
+    },
     "farmhouseL0": { 
         "inventoryId": "farmhouseL0",
         "quantityLimit": 500

@@ -1,7 +1,7 @@
 import { useDeferredValue } from "react";
 import { State } from "../GlobalContextHandler";
 import { GlobalSingleton } from "../GlobalContextHandler";
-import { checkGrouping, ItemInstance, makeItemInstance } from "./Items";
+import { checkGrouping, cloneItemInstance, flipQuantity, ItemInstance, makeItemInstance } from "./Items";
 import { Grouping } from "./Items";
 
 export type InventoryData = {
@@ -12,6 +12,7 @@ export type InventoryData = {
 }
 
 import __InventoryDataRef from "./InventoryDataRef.json";
+import InventoryPanel from "../components/InventoryPanel";
 const InventoryDataRef: Record<string, InventoryData> = __InventoryDataRef;
 
 export function getInventoryData(inventoryId: string): InventoryData | null {
@@ -26,8 +27,19 @@ export type InventoryFilter = {
 
 export type Inventory = ItemInstance[];
 
+export type InventoryTransferData = {
+    in?: State<Inventory>,
+    inId?: State<string>,
+    out?: State<Inventory>
+    outId?: State<string>,
+}
+
+export function getDefaultInventoryTransferData(): InventoryTransferData {
+    return {};
+}
+
 export function putItemNaively(invState: State<ItemInstance[]>, putItemInstance: ItemInstance): boolean {
-    
+
     const [inventory, setInventory] = invState;
     let itemInstanceToEdit: ItemInstance | null = null;
     for (let itemInstance of inventory) {
@@ -40,7 +52,7 @@ export function putItemNaively(invState: State<ItemInstance[]>, putItemInstance:
     
     if (putItemInstance.quantity > 0) {
         if (itemInstanceToEdit == null) {
-            setInventory([...inventory, putItemInstance]);
+            setInventory([...inventory, cloneItemInstance(putItemInstance)]);
             return true;
         }
         itemInstanceToEdit.quantity += putItemInstance.quantity;
@@ -66,11 +78,29 @@ export function putItem(invState: State<Inventory>, inventoryId: string, putItem
     return putItemNaively(invState, putItemInstance);
 }
 
+
+export function transferItem(data: InventoryTransferData, transferItemInstance: ItemInstance): boolean {
+    console.log(transferItemInstance);
+    if (!data.in) return false; 
+    if (!data.inId) return false;
+    if (!data.out) return false;
+    if (!data.outId) return false;
+    if (checkValidPutInventory(data.out, data.outId[0], flipQuantity(transferItemInstance))) {
+        // known bug: if the _AMT_ of items in the IN Inventory is insufficient, it will still transfer.
+        if (putItem(data.in, data.inId[0], cloneItemInstance(transferItemInstance))) {
+            putItem(data.out, data.outId[0], flipQuantity(transferItemInstance));
+            return true;
+        } 
+        
+    }
+    return false;
+}
+
 export function checkValidPutInventory(invState: State<Inventory>, inventoryId: string, checkItemInstance: ItemInstance): boolean {
     const inventoryData = getInventoryData(inventoryId);
     const [inventory, _] = invState;
     if (inventoryData == null) return true;
-    if (inventoryData.idLimit && inventoryData.idLimit >= inventory.length) return false;
+    if (inventoryData.idLimit && inventoryData.idLimit <= inventory.length) return false;
     const inventoryTotalQuantity = inventory.reduce((a, v) => (v.quantity + a), 0);
     if (inventoryData.quantityLimit && inventoryData.quantityLimit < inventoryTotalQuantity + checkItemInstance.quantity) return false;
     if (inventoryData.filter) {

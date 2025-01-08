@@ -1,10 +1,12 @@
 .inventory-panel {
     outline: solid var(--rgb-text) 1px;
     padding: 0.5rem;
-        
+    & .limits {
+        text-align: right;
+    }
     & ol {
         outline: solid var(--rgb-text) 1px;
-        
+        margin: 0;
         padding: 0.5rem;
         & li {
             display: flex;
@@ -36,14 +38,21 @@
             }
         }
     }
-    & button {
-        &.selected {
-            &.up {
-                transform: translateY(-0.25rem);
+    & .inventory-mode-buttons {
+        padding: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+        & button {
+            &.selected {
+                transition: none;
+                &.out {
+                    transform: translateY(-0.5rem);
+                }
+                &.in {
+                    transform: translateY(0.5rem);
+                }
             }
-            &.down {
-                transform: translateY(0.25rem);
-            }
-        }
+        }   
     }
+    
 }

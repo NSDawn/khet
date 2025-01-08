@@ -10,10 +10,24 @@ export type ItemInstance = {
 
 export function makeItemInstance(itemId: string, quantity: number): ItemInstance {
     const validItemId = ItemRef[itemId] ? itemId : missingItemId;
+    return { 
+        "itemId": validItemId, "quantity": quantity 
+    }
+    
+}
+
+export function flipQuantity(itemInstance: ItemInstance): ItemInstance {
+    return { 
+        "itemId": itemInstance.itemId, "quantity": -itemInstance.quantity 
+    }
+}
+export function cloneItemInstance(itemInstance: ItemInstance): ItemInstance {
+    return makeItemInstance(itemInstance.itemId, itemInstance.quantity);
+}
+
+export function makeValidItemInstance(itemId: string, quantity: number): ItemInstance {
     const validQuantity = quantity <= 0 ? 1 : quantity;
-    return (
-        { "itemId": validItemId, "quantity": validQuantity }
-    )
+    return makeItemInstance(itemId, validQuantity);
 }
 
 export type Item = { 

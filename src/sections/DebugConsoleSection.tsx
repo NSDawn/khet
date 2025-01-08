@@ -1,6 +1,6 @@
 import { KeyboardEvent, useState } from "react";
 import "./DebugConsoleSection.css";
-import { putItem, putItemNaively } from "../game/Inventory";
+import { putItemNaively } from "../game/Inventory";
 import { useGlobal } from "../GlobalContextHandler";
 import { trySetGameConfig } from "../game/GameConfig";
 import { makeItemInstance } from "../game/Items";
