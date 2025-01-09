@@ -1,6 +1,6 @@
 .inventory-panel {
     outline: solid var(--rgb-text) 1px;
-    padding: 0.5rem;
+    padding: 1rem;
     & .limits {
         text-align: right;
     }
@@ -38,21 +38,38 @@
             }
         }
     }
-    & .inventory-mode-buttons {
-        padding: 0.5rem;
+    
+    & .row {
         display: flex;
         gap: 0.5rem;
-        & button {
-            &.selected {
-                transition: none;
-                &.out {
-                    transform: translateY(-0.5rem);
-                }
-                &.in {
-                    transform: translateY(0.5rem);
-                }
+        & .right {
+            margin-left: auto;
+        }
+        & input {
+            outline: none;
+            padding: 0;
+        }
+        &.inventory-mode-buttons {
+            padding-bottom: 0.5rem;
+            transition: ease-in-out 0.25s;
+            
+            &:hover > button {
+                transform: scale(1);
+                width: 2rem;
             }
-        }   
+            & button {
+                text-align: center;
+                overflow: hidden;
+                width: 0rem;
+                padding: 0.5rem 0;
+                
+                &.selected {
+                    padding: 0.5rem;
+
+                    width: 3rem;
+                }
+            }   
+        }
     }
     
 }

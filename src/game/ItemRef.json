@@ -25,7 +25,47 @@
     "egg": {
         "itemId": "egg",
         "icon": "🥚",
-        "tags": ["canSell", "canEat"],
+        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal"
+            }
+        ]
+    },
+    "chicken": {
+        "itemId": "chicken",
+        "icon": "🍗",
+        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal"
+            }
+        ]
+    },
+    "chickenOffal": {
+        "itemId": "chicken",
+        "icon": "🫁",
+        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal"
+            }
+        ]
+    },
+    "mutton": {
+        "itemId": "mutton",
+        "icon": "🥩",
+        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal"
+            }
+        ]
+    },
+    "muttonOffal": {
+        "itemId": "muttonOffal",
+        "icon": "🫀",
+        "tags": ["canSell", "canEat", "nonVegetarian"],
         "groupSet": [
             {
                 "groupId": "animal"

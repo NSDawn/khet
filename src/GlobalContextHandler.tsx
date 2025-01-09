@@ -22,8 +22,7 @@ function GlobalContextHandler(props: PropsWithChildren) {
     const farmhouseInventory = useState(
         [
             makeValidItemInstance("diesel", 99), 
-            makeValidItemInstance("rice", 2),
-            makeValidItemInstance("sgloobis", -1),
+            makeValidItemInstance("rice", 5),
         ]
     );
 
@@ -32,6 +31,7 @@ function GlobalContextHandler(props: PropsWithChildren) {
     const personalInventory = useState(
         [
             makeValidItemInstance("wheat", 9),
+            makeValidItemInstance("rice", 5),
         ]
     );
 

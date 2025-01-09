@@ -59,6 +59,10 @@ export function TooltipSection() {
                 </div>
                 
             </> : null}
+
+            {tooltipData.type === "inventoryButton" ? <>
+                <span>{t(`ui.inventory.button.${tooltipData.id}`)}</span>
+            </> :null}
         </section>
     )
 }

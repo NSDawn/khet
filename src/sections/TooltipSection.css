@@ -1,9 +1,13 @@
 section.tooltip {
+    z-index: 999;
     position: absolute;
     display: none;
+    padding: 0.5rem;
     white-space: wrap;
-    min-width: 5rem;
+    min-width: 0rem;
     width: fit-content;
+    border: double 3px var(--rgb-text);
+    outline: none;
     & h2 {
         margin: 0;
     }

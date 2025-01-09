@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Main from './sections/Main'
+import Main from './parts/Main'
 import './App.css'
 
 function App() {

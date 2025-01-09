@@ -1,9 +1,9 @@
 import { useGlobal } from "../GlobalContextHandler.tsx";
-import InfoSection from "./InfoSection.tsx";
-import SettingsSection from "./SettingsSection.tsx";
-import InventorySection from "./InventorySection.tsx";
-import DebugConsoleSection from "./DebugConsoleSection.tsx";
-import { TooltipSection } from "./TooltipSection.tsx";
+import InfoSection from "../sections/InfoSection.tsx";
+import SettingsSection from "../sections/SettingsSection.tsx";
+import InventorySection from "../sections/InventorySection.tsx";
+import DebugConsoleSection from "../sections/DebugConsoleSection.tsx";
+import { TooltipSection } from "../sections/TooltipSection.tsx";
 import { useEffect } from "react";
 import { changeLanguage } from "i18next";
 

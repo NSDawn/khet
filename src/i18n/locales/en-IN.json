@@ -65,6 +65,10 @@
     "ui.calendar.weekday.6": "Saturday",
 
     "ui.inventory.farmhouseL0.h": "Basic Farmhouse",
+    "ui.inventory.button.in": "Recieve",
+    "ui.inventory.button.out10": "Send 10",
+    "ui.inventory.button.outAll": "Send Stack",
+    "ui.inventory.button.trash": "Trash Stack",
 
     "item.missing": "Missing Item",
     "item.missing.flavor": "How do you have this...?",
@@ -72,6 +76,11 @@
     "item.wheat.flavor": "A common grain often grown in colder months. Often milled into flour.",
     "item.diesel": "Diesel",
     "item.rice": "Rice",
+    "item.egg": "Egg",
+    "item.chicken": "Chicken",
+    "item.chickenOffal": "Chicken Organ Meat",
+    "item.mutton": "Mutton",
+    "item.muttonOffal": "Mutton Organ Meat",
     "item.goldBullion": "Gold Bullion",
     "item.goldBullion.flavor": "Shiny...!",
     "item.rice.flavor": "A staple grain suitable for wet and dry conditions. Delicious and nutritionally complete.",

@@ -47,12 +47,17 @@ export function putItemNaively(invState: State<ItemInstance[]>, putItemInstance:
             itemInstanceToEdit = itemInstance;
         }
     }
+    console.log(itemInstanceToEdit);
+
 
     if (putItemInstance.quantity == 0) return (itemInstanceToEdit == null);
     
     if (putItemInstance.quantity > 0) {
         if (itemInstanceToEdit == null) {
-            setInventory([...inventory, cloneItemInstance(putItemInstance)]);
+            //setInventory([...inventory, cloneItemInstance(putItemInstance)]);
+            // why did this work? vv and not this ^^ no idea
+            inventory.push(cloneItemInstance(putItemInstance));
+            setInventory([...inventory]);
             return true;
         }
         itemInstanceToEdit.quantity += putItemInstance.quantity;
@@ -80,7 +85,6 @@ export function putItem(invState: State<Inventory>, inventoryId: string, putItem
 
 
 export function transferItem(data: InventoryTransferData, transferItemInstance: ItemInstance): boolean {
-    console.log(transferItemInstance);
     if (!data.in) return false; 
     if (!data.inId) return false;
     if (!data.out) return false;
@@ -100,7 +104,7 @@ export function checkValidPutInventory(invState: State<Inventory>, inventoryId: 
     const inventoryData = getInventoryData(inventoryId);
     const [inventory, _] = invState;
     if (inventoryData == null) return true;
-    if (inventoryData.idLimit && inventoryData.idLimit <= inventory.length) return false;
+    if (inventoryData.idLimit && inventoryData.idLimit < inventory.length) return false;
     const inventoryTotalQuantity = inventory.reduce((a, v) => (v.quantity + a), 0);
     if (inventoryData.quantityLimit && inventoryData.quantityLimit < inventoryTotalQuantity + checkItemInstance.quantity) return false;
     if (inventoryData.filter) {

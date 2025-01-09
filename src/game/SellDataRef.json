@@ -14,10 +14,35 @@
         "fluctuationVarianceOffsetSeed": 6,
         "fluctuationVarianceScalar": 1
     },
+    "egg" : {
+        "itemId": "egg",
+        "baseSellPrice": 5,
+        "baseBuyPrice": 8
+    },
+    "chicken": {
+        "itemId": "chicken",
+        "baseSellPrice": 135,
+        "baseBuyPrice": 225
+    },
+    "chickenOffal": {
+        "itemId": "chickenOffal",
+        "baseSellPrice": 66,
+        "baseBuyPrice": 110
+    },
+    "mutton": {
+        "itemId": "mutton",
+        "baseSellPrice": 411,
+        "baseBuyPrice": 650
+    },
+    "muttonOffal": {
+        "itemId": "muttonOffal",
+        "baseSellPrice": 240,
+        "baseBuyPrice": 400
+    },
     "diesel" : {
         "itemId": "diesel",
         "baseSellPrice": 90,
-        "baseBuyPrice": 1
+        "baseBuyPrice": 100
     },
     "goldBullion" : {
         "itemId": "goldBullion",
