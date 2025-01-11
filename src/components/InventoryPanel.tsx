@@ -1,15 +1,16 @@
 import { useState, useEffect, useTransition } from "react";
 import { useGlobal } from "../GlobalContextHandler";
-import { getItem, checkItemTag, getSellData, getPriceFromDate, makeItemInstance, ItemInstance, cloneItemInstance, flipQuantity } from "../game/Items";
+import { getItem, checkItemTag, getSellData, getPriceFromDate, makeItemInstance, ItemInstance, cloneItemInstance, flipQuantity, Item } from "../game/Items";
 import { useTranslation } from "react-i18next";
 import { getInventoryData, Inventory, putItem, transferItem } from "../game/Inventory";
 import { State } from "../GlobalContextHandler";
 import "./InventoryPanel.css";
+import { getQueriedInventory } from "../game/InventorySearch";
 
 export default function InventoryPanel(props: {inventory: State<Inventory>, inventoryId: State<string>}) {
 
     const { t } = useTranslation();
-    const [inventory, _] = props.inventory;
+    const [inventory, setInventory] = props.inventory;
     const [inventoryId, __] = props.inventoryId;
     const [date, ___] = useGlobal().dateJSReadOnly;
     const [inventoryTransferData, setInventoryTransferData] = useGlobal().inventoryTransferData;
@@ -20,6 +21,21 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
         { mode: "outAll", icon: "⏫"},
         { mode: "trash", icon: "🚮"},
     ];
+    const [sortIdx, setSortIdx] = useState(0);
+    const sortTypes = [
+        {id: "alphabetical", icon: "🔠", 
+            sortf: (a: ItemInstance, b: ItemInstance) => {
+                if (t(`item.${a.itemId}`) > t(`item.${b.itemId}`)) return -1;
+                return 1;
+            }
+        },
+        {id: "quantity", icon: "🔢",
+            sortf: (a: ItemInstance, b: ItemInstance) => {
+                if (a.quantity > b.quantity) return -1;
+                return 1;
+            }
+        },
+    ]
     const [tooltipData, setTooltipData] = useGlobal().tooltipData;
     const [idCount, setIdCount] = useState(0);
     const [idCountLimit, setIdCountLimit] = useState(-1);
@@ -27,6 +43,10 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
     const [quantityCountLimit, setQuantityCountLimit] = useState(-1);
     const [limitDisplay, setLimitDisplay] = useState("");
     const [searchInput, setSearchInput] = useState("");
+    const [queriedInventory, setQueriedInventory] = useState([...inventory])
+
+
+    sortTypes[sortIdx].id
     
     useEffect(() => {
         setIdCount(inventory.length);
@@ -70,6 +90,13 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
     function clickModeButton(inMode: string) {
         setMode(mode == inMode ? "" : inMode);    
     }
+
+    function clickSortButton() {
+        setInventory(inventory.sort(sortTypes[sortIdx].sortf));
+        const newIdx = (sortIdx + 1) % sortTypes.length;
+        setSortIdx(newIdx);
+        setTooltipData({...tooltipData, id: `sort.${sortTypes[newIdx].id}`})
+    }
     
     function handleItemTransfer(itemInstance: ItemInstance) {
         if (mode === "in") return;
@@ -85,8 +112,16 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
         const newInventoryTransferData = {...inventoryTransferData, out: props.inventory, outId: props.inventoryId};
         setInventoryTransferData(newInventoryTransferData);
         transferItem(newInventoryTransferData, makeItemInstance(itemInstance.itemId, quantityToSend));
-        
     }
+
+    useEffect(() => {
+        if (searchInput === "") {
+            setQueriedInventory([...inventory]);
+            return;
+        }
+        setQueriedInventory(getQueriedInventory(searchInput, inventory, t));
+        
+    }, [searchInput])
 
     return (
         <div className="inventory-panel">
@@ -105,6 +140,16 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
                     )
 
                 }
+                
+                <button 
+                    className="emoji-icon"
+                    onMouseMove={(e) => setTooltipData({...tooltipData, type: "inventoryButton", id: `sort.${sortTypes[sortIdx].id}`, pageX: e.pageX, pageY: e.pageY, enabled: true})}
+                    onMouseOut={() => setTooltipData({...tooltipData, enabled: false})}
+                    onClick={clickSortButton}
+                >
+                    {sortTypes[sortIdx].icon}
+                </button> 
+                
             </div>
             <div className="row">
                 <button
@@ -123,7 +168,7 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
             </div>
             <ol>
                 {
-                    inventory.map((itemInstance, i) => 
+                    queriedInventory.map((itemInstance, i) => 
                         <li 
                             key={`${i}`} 
                             onMouseMove={(e) => setTooltipData({...tooltipData, type: "inventoryItem", id: itemInstance.itemId, otherData: [itemInstance.quantity.toString()], pageX: e.pageX, pageY: e.pageY, enabled: true})}

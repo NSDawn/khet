@@ -52,6 +52,17 @@
             }
         ]
     },
+    "chickenCurryRice": {
+        "itemId": "chickenCurryRice",
+        "icon": "🍛",
+        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "culinary",
+                "subgroupSet": ["meal"]
+            }
+        ]
+    },
     "mutton": {
         "itemId": "mutton",
         "icon": "🥩",

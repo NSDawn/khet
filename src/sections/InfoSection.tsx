@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import DateReadout from "../components/DateReadout";
 import InventoryPanel from "../components/InventoryPanel";
 import { formatNumber, formatTemperature } from "../i18n/i18nNumeric";
+import MoneyReadout from "../components/MoneyReadout";
 
 export default function InfoSection() {
     
@@ -14,7 +15,7 @@ export default function InfoSection() {
 
     return (
         <section>
-            <h2>₹ {formatNumber(rupees, gameConfig.numberFormat)} </h2>
+            <h2>₹ {<MoneyReadout moneyState={G.rupees} />} </h2>
             <h4> 
                 <DateReadout />
             </h4>

@@ -69,6 +69,8 @@
     "ui.inventory.button.out10": "Send 10",
     "ui.inventory.button.outAll": "Send Stack",
     "ui.inventory.button.trash": "Trash Stack",
+    "ui.inventory.button.sort.alphabetical": "Sort Alphabetically",
+    "ui.inventory.button.sort.quantity": "Sort by Quantity",
 
     "item.missing": "Missing Item",
     "item.missing.flavor": "How do you have this...?",
@@ -79,6 +81,7 @@
     "item.egg": "Egg",
     "item.chicken": "Chicken",
     "item.chickenOffal": "Chicken Organ Meat",
+    "item.chickenCurry": "Chicken Curry with Rice",
     "item.mutton": "Mutton",
     "item.muttonOffal": "Mutton Organ Meat",
     "item.goldBullion": "Gold Bullion",
@@ -86,10 +89,12 @@
     "item.rice.flavor": "A staple grain suitable for wet and dry conditions. Delicious and nutritionally complete.",
     "item.group.botanical": "Botanical Product",
     "item.group.animal": "Animal Product",
+    "item.group.culinary": "Culinary Product",
     "item.group.industrial": "Industrial Product",
     "item.group.miscellaneous": "Miscellaneous",
     "item.group.missing": "Questionable Item",
     "item.subgroup.grain": "Grain",
+    "item.subgroup.meal": "Meal",
     "item.subgroup.missing": "Missing",
 
     "": ""

@@ -23,6 +23,10 @@ function GlobalContextHandler(props: PropsWithChildren) {
         [
             makeValidItemInstance("diesel", 99), 
             makeValidItemInstance("rice", 5),
+            makeValidItemInstance("egg", 12),
+            makeValidItemInstance("chicken", 1),
+            makeValidItemInstance("chickenOffal", 1),
+            //makeValidItemInstance("chicken", 1),
         ]
     );
 

@@ -75,6 +75,15 @@ export default function DebugConsoleSection() {
                     setConsoleHistory("");
                 }, 500)
                 return "ok fam";
+            case "rupees": 
+            case "rs": 
+                const [rupees, setRupees] = G.rupees;
+                if (cmd.length === 1) {
+                    if (rupees > 10000000) return `u've got ₹${rupees}, crorepati`
+                    return `poor guy, u've got only ₹${rupees}...`
+                }
+                setRupees(parseInt(cmd[1]));
+                return `i've set rupees to ₹${parseInt(cmd[1])}`;
             default: 
                 return "girl i dunno that command";
         }
