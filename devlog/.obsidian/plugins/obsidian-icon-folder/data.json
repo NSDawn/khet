@@ -1,0 +1,56 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [],
+    "recentlyUsedIconsSize": 5,
+    "rules": [
+      {
+        "rule": "-b",
+        "icon": "LiBug",
+        "for": "everything",
+        "order": 0
+      },
+      {
+        "rule": "-v",
+        "icon": "LiCode2",
+        "for": "everything",
+        "order": 1
+      },
+      {
+        "rule": "-d",
+        "icon": "LiPencilRuler",
+        "for": "everything",
+        "order": 2
+      },
+      {
+        "rule": "-r",
+        "icon": "LiRedo2",
+        "for": "everything",
+        "order": 3
+      }
+    ],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  }
+}

@@ -3,7 +3,7 @@
     "wheat": {
         "itemId": "wheat",
         "icon": "🌾",
-        "tags": ["canSell", "canEat"],
+        "tags": ["canSell"],
         "groupSet": [
             {
                 "groupId": "botanical",
@@ -14,7 +14,7 @@
     "rice": {
         "itemId": "rice",
         "icon": "🌾",
-        "tags": ["canSell", "canEat"],
+        "tags": ["canSell"],
         "groupSet": [
             {
                 "groupId": "botanical",
@@ -25,7 +25,7 @@
     "egg": {
         "itemId": "egg",
         "icon": "🥚",
-        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "tags": ["canSell", "nonVegetarian"],
         "groupSet": [
             {
                 "groupId": "animal"
@@ -35,7 +35,7 @@
     "chicken": {
         "itemId": "chicken",
         "icon": "🍗",
-        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "tags": ["canSell", "nonVegetarian"],
         "groupSet": [
             {
                 "groupId": "animal"
@@ -45,7 +45,7 @@
     "chickenOffal": {
         "itemId": "chicken",
         "icon": "🫁",
-        "tags": ["canSell", "canEat", "nonVegetarian"],
+        "tags": ["canSell", "nonVegetarian"],
         "groupSet": [
             {
                 "groupId": "animal"
@@ -73,13 +73,47 @@
             }
         ]
     },
-    "muttonOffal": {
-        "itemId": "muttonOffal",
-        "icon": "🫀",
-        "tags": ["canSell", "canEat", "nonVegetarian"],
+    "hilsaFish": {
+        "itemId": "hilsaFish",
+        "icon": "🐟",
+        "tags": ["canSell", "nonVegetarian"],
         "groupSet": [
             {
-                "groupId": "animal"
+                "groupId": "animal",
+                "subgroupSet": ["fish"]
+            }
+        ]
+    },
+    "seerFish": {
+        "itemId": "seerFish",
+        "icon": "🐟",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish"]
+            }
+        ]
+    },
+    "rohuFish": {
+        "itemId": "rohuFish",
+        "icon": "🐠",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish"]
+            }
+        ]
+    },
+    "pomfretFish": {
+        "itemId": "pomfretFish",
+        "icon": "🐠",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish"]
             }
         ]
     },

@@ -79,7 +79,7 @@ export default function DebugConsoleSection() {
             case "rs": 
                 const [rupees, setRupees] = G.rupees;
                 if (cmd.length === 1) {
-                    if (rupees > 10000000) return `u've got ₹${rupees}, crorepati`
+                    if (rupees > 10000000) return `u've got ₹${rupees}, man`
                     return `poor guy, u've got only ₹${rupees}...`
                 }
                 setRupees(parseInt(cmd[1]));

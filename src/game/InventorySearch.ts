@@ -17,7 +17,6 @@ export function getQueriedInventory(query: string, inventory: Inventory, t: TFun
     const out = inventory.filter((v) => 
         distances[v.itemId] <= -query.length + t(`item.${v.itemId}`).length + LevenshteinDistanceThreshold
     ).sort((a, b) => distances[a.itemId] - distances[b.itemId]);
-    console.log(distances);
     return out;
 }
 

@@ -95,7 +95,8 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
         setInventory(inventory.sort(sortTypes[sortIdx].sortf));
         const newIdx = (sortIdx + 1) % sortTypes.length;
         setSortIdx(newIdx);
-        setTooltipData({...tooltipData, id: `sort.${sortTypes[newIdx].id}`})
+        setTooltipData({...tooltipData, id: `sort.${sortTypes[newIdx].id}`});
+        updateQueriedInventory();
     }
     
     function handleItemTransfer(itemInstance: ItemInstance) {
@@ -114,14 +115,15 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
         transferItem(newInventoryTransferData, makeItemInstance(itemInstance.itemId, quantityToSend));
     }
 
-    useEffect(() => {
+    function updateQueriedInventory() {
         if (searchInput === "") {
             setQueriedInventory([...inventory]);
             return;
         }
-        setQueriedInventory(getQueriedInventory(searchInput, inventory, t));
-        
-    }, [searchInput])
+        setQueriedInventory(getQueriedInventory(searchInput, inventory, t));  
+    }
+    useEffect(updateQueriedInventory, [searchInput, inventory])
+
 
     return (
         <div className="inventory-panel">

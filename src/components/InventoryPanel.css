@@ -5,6 +5,8 @@
         text-align: right;
     }
     & ol {
+        height: 6rem;
+        overflow: scroll;
         outline: solid var(--rgb-text) 1px;
         margin: 0;
         padding: 0.5rem;
