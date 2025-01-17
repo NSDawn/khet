@@ -24,5 +24,8 @@ composed of tickets of some type
 
 id is alphanumeric: 
 
-a0001-d1
--> 
+**a0001-d1**
+- a: a, b, 1, 2... = version number
+- 0001: xxxx = id number
+- d: d, v, b, r... = ticket code
+- 1: 1, 2, 3 = size of ticket
