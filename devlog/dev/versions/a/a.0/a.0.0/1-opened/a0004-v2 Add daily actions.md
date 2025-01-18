@@ -2,6 +2,8 @@
 id: a0004-v2
 dateOpened: 2025-01-16
 dateClosed: ""
+tags:
+  - ticket
 ---
 # description
 Create game state daily actions + total daily actions

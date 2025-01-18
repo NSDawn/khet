@@ -13,13 +13,13 @@ X               .X            .X
 
 composed of tickets of some type
 
-| ticket type | description                                                      | code |
-| ----------- | ---------------------------------------------------------------- | ---- |
-| dev         | writing code; developing new feature; etc.                       | v    |
-| bug         | bugfixing                                                        | b    |
-| design      | design new feature; write .jsons for items; write dialogue; etc. | d    |
-| rewrite     | rewriting code; changing architecture                            | r    |
-|             |                                                                  |      |
+| ticket type   | description                                                      | code |
+| ------------- | ---------------------------------------------------------------- | ---- |
+| dev           | writing code; developing new feature; etc.                       | v    |
+| bug           | bugfixing                                                        | b    |
+| design        | design new feature; write .jsons for items; write dialogue; etc. | d    |
+| rewrite       | rewriting code; changing architecture                            | r    |
+| documentation | writing docs                                                     | c    |
 # ids 
 
 id is alphanumeric: 

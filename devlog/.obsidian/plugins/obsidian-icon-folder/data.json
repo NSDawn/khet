@@ -9,28 +9,35 @@
     "recentlyUsedIconsSize": 5,
     "rules": [
       {
-        "rule": "-b",
+        "rule": "^[a-zA-Z0-9]{5}-b",
         "icon": "LiBug",
         "for": "everything",
-        "order": 0
+        "order": 0,
+        "useFilePath": false
       },
       {
-        "rule": "-v",
+        "rule": "^[a-zA-Z0-9]{5}-v",
         "icon": "LiCode2",
         "for": "everything",
         "order": 1
       },
       {
-        "rule": "-d",
+        "rule": "^[a-zA-Z0-9]{5}-d",
         "icon": "LiPencilRuler",
         "for": "everything",
         "order": 2
       },
       {
-        "rule": "-r",
+        "rule": "^[a-zA-Z0-9]{5}-r",
         "icon": "LiRedo2",
         "for": "everything",
         "order": 3
+      },
+      {
+        "rule": "^[a-zA-Z0-9]{5}-c",
+        "icon": "LiNotebookPen",
+        "for": "everything",
+        "order": 4
       }
     ],
     "extraMargin": {

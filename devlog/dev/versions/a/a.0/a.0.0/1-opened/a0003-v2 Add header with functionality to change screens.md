@@ -2,6 +2,8 @@
 id: a0003-v2
 dateOpened: 2025-01-16
 dateClosed: ""
+tags:
+  - ticket
 ---
 # description
 Add game state 'screen': string; which stores which screen the player is own

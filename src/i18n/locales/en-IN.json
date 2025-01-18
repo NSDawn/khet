@@ -72,6 +72,14 @@
     "ui.inventory.button.sort.alphabetical": "Sort Alphabetically",
     "ui.inventory.button.sort.quantity": "Sort by Quantity",
 
+    "climate.weather.sunny": "Sunny",
+    "climate.weather.cloudy": "Cloudy",
+    "climate.weather.hazy": "Hazy",
+    "climate.weather.overcast": "Overcast",
+    "climate.weather.rainy": "Rainy",
+    "climate.weather.stormy": "Stormy",
+    "climate.weather.snowy": "Snowy",
+
     "item.missing": "Missing Item",
     "item.missing.flavor": "How do you have this...?",
     "item.wheat": "Wheat",

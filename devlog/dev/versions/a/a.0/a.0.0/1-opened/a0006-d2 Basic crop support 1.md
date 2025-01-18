@@ -2,6 +2,8 @@
 id: a0006-d2
 dateOpened: 2025-01-16
 dateClosed: ""
+tags:
+  - ticket
 ---
 # description
 Make type CropData + make cropdata for simple crops wheat, rice and one more
