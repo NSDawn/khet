@@ -37,9 +37,10 @@ export function getWeatherTypeIcon(key: string) {
 }
 
 const weatherTypeIcons: Record<string, string> = {
-    "sultry": "️‍🔥", 
+    "arid": "🔥",
+    "sultry": "️🌤️", 
     "sunny": "☀︎",
-    "cloudy": "🌤︎",
+    "cloudy": "⛅",
     "hazy": "🌥︎",
     "overcast": "☁︎",
     "rainy": "🌧︎",
@@ -58,11 +59,12 @@ export function getTemperatureHighs(date: Date): number {
     return getTemperatureHighsOrLows(date, "climateHighs", 9);
 }
 export function getTemperatureLows(date: Date): number {
+    return 25;
     return getTemperatureHighsOrLows(date, "climateLows", 7);
 }
 
 export function avgTemperature(temp: Temperature): number {
-    return Math.ceil(((temp.high) * 1.1 + temp.low * 0.9) /2);
+    return Math.ceil(((temp.high) * 1.3 + temp.low * 0.7) /2);
 }
 
 export function getRain(date: Date): number {
@@ -75,7 +77,7 @@ export function getDaysUntilRain(date: Date): number {
     const iLimit = 364;
     while (getRain(iDate) === 0) {
         i += 1;
-        iDate.setDate(date.getDate() + 1);
+        iDate.setDate(iDate.getDate() + 1);
         if (i >= iLimit) break;
     }
     if (i >= iLimit) return -1;
@@ -115,24 +117,15 @@ export function getWeatherType(date: Date): string {
 
 const weatherTypeByTemperature = [
     {
-        temperature: 40,
-        weatherTypes: [
-            {
-                daysUntilRain: 1,
-                weatherType: "sunny"
-            }
-        ]
-    },
-    {
         temperature: 35,
         weatherTypes: [
             {
-                daysUntilRain: 2,
-                weatherType: "sunny"
+                daysUntilRain: 5,
+                weatherType: "arid"
             },
             {
                 daysUntilRain: 1,
-                weatherType: "cloudy"
+                weatherType: "sultry"
             },
         ]
     },

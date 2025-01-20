@@ -72,6 +72,8 @@
     "ui.inventory.button.sort.alphabetical": "Sort Alphabetically",
     "ui.inventory.button.sort.quantity": "Sort by Quantity",
 
+    "climate.weather.arid": "Arid",
+    "climate.weather.sultry": "Sultry",
     "climate.weather.sunny": "Sunny",
     "climate.weather.cloudy": "Cloudy",
     "climate.weather.hazy": "Hazy",

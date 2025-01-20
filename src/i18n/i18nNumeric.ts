@@ -57,7 +57,7 @@ export function formatTemperature(tempCelcius: number, format: string = "celsius
     let temperature = tempCelcius;
     switch (format) {
         case "fahrenheit": 
-            temperature = Math.round((temperature * 9 / 5) - 32);
+            temperature = Math.round((temperature * 9 / 5) + 32);
             unitString = "˚F";
             break;
         case "kelvin":

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { getWeather, getWeatherType, getWeatherTypeIcon } from "../game/DateAndClimate";
+import { avgTemperature, getTemperature, getWeather, getWeatherType, getWeatherTypeIcon } from "../game/DateAndClimate";
 import { useGlobal } from "../GlobalContextHandler";
 import { formatTemperature } from "../i18n/i18nNumeric";
 import { useEffect, useState } from "react";
@@ -13,7 +13,6 @@ export function WeatherReadout(props: {date: Date, temperatureOnly: boolean}) {
     const [weather, setWeather] = useState(getWeather(dateJSReadOnly));
 
     useEffect(() => {
-        console.log(getWeather(dateJSReadOnly));
         setWeather(getWeather(dateJSReadOnly));
     }, [dateJSReadOnly, date])
    

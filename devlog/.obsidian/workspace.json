@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dev/versions/a/a.0/a.0.0/2-in-progress/a0001-d1 Fill JSONS for weather.md",
+                "file": "dev/versions/a/a.0/a.0.0/opened/a0003-v2 Add header with functionality to change screens.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "a0001-d1 Fill JSONS for weather"
+              "title": "a0003-v2 Add header with functionality to change screens"
+            }
+          },
+          {
+            "id": "b78c487ec95cb59e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dev/versions/a/a.0/a.0.0/in-progress/a0009-b1 Temperature type does not reflect daysToRain.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "a0009-b1 Temperature type does not reflect daysToRain"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "dev/versions/a/a.0/a.0.0/2-in-progress/a0001-d1 Fill JSONS for weather.md",
+                "file": "dev/versions/a/a.0/a.0.0/in-progress/a0009-b1 Temperature type does not reflect daysToRain.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for a0001-d1 Fill JSONS for weather"
+              "title": "Backlinks for a0009-b1 Temperature type does not reflect daysToRain"
             }
           },
           {
@@ -112,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "dev/versions/a/a.0/a.0.0/2-in-progress/a0001-d1 Fill JSONS for weather.md",
+                "file": "dev/versions/a/a.0/a.0.0/in-progress/a0009-b1 Temperature type does not reflect daysToRain.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from a0001-d1 Fill JSONS for weather"
+              "title": "Outgoing links from a0009-b1 Temperature type does not reflect daysToRain"
             }
           },
           {
@@ -139,10 +154,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "dev/versions/a/a.0/a.0.0/2-in-progress/a0001-d1 Fill JSONS for weather.md"
+                "file": "dev/versions/a/a.0/a.0.0/in-progress/a0009-b1 Temperature type does not reflect daysToRain.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of a0001-d1 Fill JSONS for weather"
+              "title": "Outline of a0009-b1 Temperature type does not reflect daysToRain"
             }
           }
         ]
@@ -162,28 +177,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6a6d44943f8dfe17",
+  "active": "84712b0dd0a5a106",
   "lastOpenFiles": [
-    "dev/versions/a/a.0/a.0.0/3-closed/a0002-v1 Implement getWeather().md",
-    "dev/versions/a/a.0/a.0.0/1-opened/a0004-v2 Add daily actions.md",
-    "dev/versions/a/a.0/a.0.0/1-opened/a0005-d1 Complete meat and fish items.md",
-    "dev/versions/a/a.0/a.0.0/1-opened/a0008-v1 Implement function incrementDay().md",
-    "dev/versions/a/a.0/a.0.0/1-opened/a0007-v3 Basic crop support 2.md",
-    "dev/versions/a/a.0/a.0.0/1-opened/a0006-d2 Basic crop support 1.md",
-    "dev/versions/a/a.0/a.0.0/1-opened/a0003-v2 Add header with functionality to change screens.md",
+    "dev/versions/a/a.0/a.0.0/opened/Untitled.md",
+    "dev/versions/a/a.0/a.0.0/in-progress/a0009-b1 Temperature type does not reflect daysToRain.md",
+    "dev/versions/a/a.0/a.0.0/opened/a0008-v1 Implement function incrementDay().md",
+    "dev/versions/a/a.0/a.0.0/opened/a0006-d2 Basic crop support 1.md",
+    "dev/versions/a/a.0/a.0.0/opened/a0005-d1 Complete meat and fish items.md",
+    "dev/versions/a/a.0/a.0.0/opened/a0004-v2 Add daily actions.md",
+    "dev/versions/a/a.0/a.0.0/opened/a0003-v2 Add header with functionality to change screens.md",
+    "dev/versions/a/a.0/a.0.0/in-progress/a0001-d1 Fill JSONS for weather.md",
+    "ref/templates/x.x.x/2-in-progress/Untitled.md",
+    "dev/versions/a/a.0/a.0.0/closed/a0002-v1 Implement getWeather().md",
+    "dev/versions/a/a.0/a.0.0/opened/a0007-v3 Basic crop support 2.md",
     "ref/templates/ticket.md",
-    "dev/versions/a/a.0/a.0.0/2-in-progress/a0001-d1 Fill JSONS for weather.md",
     "dev/version-system.md",
     "a0006-d2.md",
     "().md",
-    "Untitled.md",
     "-d1.md",
-    "dev/versions/a/a.0/a.0.0/3-closed",
-    "dev/versions/a/a.0/a.0.0/2-in-progress",
-    "dev/versions/a/a.0/a.0.0/1-opened",
-    "ref/templates/x.x.x/3-closed",
-    "ref/templates/x.x.x/2-in-progress",
-    "ref/templates/x.x.x/1-opened",
+    "dev/versions/a/a.0/a.0.0/closed",
+    "dev/versions/a/a.0/a.0.0/in-progress",
+    "dev/versions/a/a.0/a.0.0/opened",
+    "ref/templates/x.x.x/closed",
+    "ref/templates/x.x.x/in-progress",
+    "ref/templates/x.x.x/opened",
     "ref/templates/x.x.x",
     "dev/versions/a/a.0/a.0.0",
     "dev/versions/a/a.0",
