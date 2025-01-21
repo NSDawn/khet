@@ -59,12 +59,11 @@ export function getTemperatureHighs(date: Date): number {
     return getTemperatureHighsOrLows(date, "climateHighs", 9);
 }
 export function getTemperatureLows(date: Date): number {
-    return 25;
     return getTemperatureHighsOrLows(date, "climateLows", 7);
 }
 
 export function avgTemperature(temp: Temperature): number {
-    return Math.ceil(((temp.high) * 1.3 + temp.low * 0.7) /2);
+    return Math.ceil(((temp.high) * 1.5 + temp.low * 0.5) /2);
 }
 
 export function getRain(date: Date): number {

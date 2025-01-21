@@ -1,5 +1,5 @@
 ---
-id: a0001-d1
+id: a0001-d2
 dateOpened: 2025-01-16
 dateClosed: ""
 tags:
@@ -7,7 +7,7 @@ tags:
 ---
 # description
 Fill JSONS for:
-- temperatureLows
-- temperatureHighs
+- climateLows
+- climateHighs
 - rain
 # notes
