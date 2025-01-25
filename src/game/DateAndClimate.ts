@@ -38,7 +38,7 @@ export function getWeatherTypeIcon(key: string) {
 
 const weatherTypeIcons: Record<string, string> = {
     "arid": "🔥",
-    "sultry": "️🌤️", 
+    "sultry": "️🌤︎", 
     "sunny": "☀︎",
     "cloudy": "⛅",
     "hazy": "🌥︎",

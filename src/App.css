@@ -82,12 +82,16 @@ main {
     background: var(--rgb-text); 
   }
 }
-section {
+
+section, header {
   flex: 1;
   min-width: fit-content;
   padding: 1rem;
   background: var(--rgb-bg);
   outline: double var(--rgb-text) 2px;
+}
+header {
+  min-width: 80vw;
 }
 button, button:focus {
   all: unset;
@@ -98,7 +102,7 @@ button, button:focus {
   padding: 0.5rem;
   line-height: 1em;
   border-radius: 4px;
-  transition: ease-in-out 0.25s;
+  transition: ease-in-out 0.15s;
   
   &:hover {
     outline: solid var(--rgb-text) 3px;

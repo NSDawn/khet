@@ -1,6 +1,6 @@
 import { GlobalSingleton } from '../GlobalContextHandler';
 import __ItemRef from './ItemRef.json';
-const ItemRef: Record<string, Item> = __ItemRef;
+export const ItemRef: Record<string, Item> = __ItemRef;
 const missingItemId: string = "missing";
 
 export type ItemInstance = {

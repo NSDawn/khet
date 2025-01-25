@@ -1,9 +1,9 @@
 import { KeyboardEvent, useState } from "react";
-import "./DebugConsoleSection.css";
-import { putItemNaively } from "../game/Inventory";
-import { useGlobal } from "../GlobalContextHandler";
-import { trySetGameConfig } from "../game/GameConfig";
-import { makeItemInstance } from "../game/Items";
+import "./DebugSections.css";
+import { putItemNaively } from "../../game/Inventory";
+import { useGlobal } from "../../GlobalContextHandler";
+import { trySetGameConfig } from "../../game/GameConfig";
+import { makeItemInstance } from "../../game/Items";
 
 export default function DebugConsoleSection() {
 

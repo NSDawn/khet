@@ -2,6 +2,7 @@
     "locale": "en-IN",
     "unitTemperature": "celsius",
     "numberFormat": "indian",
+    "playerFarmName": "???'s Farm",
     "debug": true,
     "showDebugConsole": true
 }

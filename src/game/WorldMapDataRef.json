@@ -1,0 +1,54 @@
+{   
+    "main": { 
+        "mapId": "main",
+        "type": "domain",
+        "spots": [
+            {
+                "destination": {
+                    "domain": "main", "world": "playerFarm", "local": "farmhouse"
+                },
+                "position": {"x": 75, "y": 50},
+                "size": {"x": 50, "y": 50},
+                "icon": "🧑‍🌾"
+            }
+        ]
+    }, 
+    "playerFarm": {
+        "mapId": "playerFarm",
+        "type": "local",
+        "spots": [
+            {
+                "destination": {
+                    "domain": "main", "world": "playerFarm", "local": "plot1"
+                },
+                "position": {"x": 80, "y": 30},
+                "size": {"x": 60, "y": 20},
+                "icon": "🌱"
+            },
+            {
+                "destination": {
+                    "domain": "main", "world": "playerFarm", "local": "plot2"
+                },
+                "position": {"x": 80, "y": 50},
+                "size": {"x": 60, "y": 20},
+                "icon": "🌱"
+            },
+            {
+                "destination": {
+                    "domain": "main", "world": "playerFarm", "local": "plot3"
+                },
+                "position": {"x": 80, "y": 70},
+                "size": {"x": 60, "y": 20},
+                "icon": "🌱"
+            },
+            {
+                "destination": {
+                    "domain": "main", "world": "playerFarm", "local": "farmhouse"
+                },
+                "position": {"x": 50, "y": 75},
+                "size": {"x": 20, "y": 20},
+                "icon": "🏡"
+            }
+        ]
+    }
+}

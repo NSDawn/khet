@@ -6,6 +6,8 @@ import InventoryPanel from "../components/InventoryPanel";
 import { formatNumber, formatTemperature } from "../i18n/i18nNumeric";
 import MoneyReadout from "../components/MoneyReadout";
 import { WeatherReadout } from "../components/WeatherReadout";
+import DailyActionsReadout from "../components/DailyActionsReadout";
+import { getDailyActionsLimit } from "../game/DailyActions";
 
 export default function InfoSection() {
     
@@ -18,9 +20,12 @@ export default function InfoSection() {
     return (
         <section>
             <h2>₹ {<MoneyReadout moneyState={G.rupees} />} </h2>
+            <h3>
+                <DailyActionsReadout dailyActions={G.dailyActions} dailyActionsLimit={getDailyActionsLimit()}></DailyActionsReadout>
+            </h3>
             <h4> 
                 <DateReadout date={dateJSReadOnly} />
-            </h4>
+            </h4>    
             <h3><WeatherReadout date={dateJSReadOnly} temperatureOnly={false} /></h3>
             <InventoryPanel inventory={G.personalInventory} inventoryId={G.personalInventoryId}/>
         </section>

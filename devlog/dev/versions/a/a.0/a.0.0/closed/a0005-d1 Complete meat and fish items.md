@@ -1,7 +1,7 @@
 ---
 id: a0005-d1
 dateOpened: 2025-01-16
-dateClosed: ""
+dateClosed: 2025-01-21
 tags:
   - ticket
 ---

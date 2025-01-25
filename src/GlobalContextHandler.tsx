@@ -3,13 +3,16 @@ import { ItemInstance, makeItemInstance, makeValidItemInstance } from "./game/It
 import { GameConfig, getDefaultGameConfig } from "./game/GameConfig";
 import { getDefaultTooltipData, TooltipData } from "./sections/TooltipSection";
 import { getDefaultInventoryTransferData, InventoryTransferData } from "./game/Inventory";
+import { getDefaultSpot, Spot } from "./game/World";
 
 const GlobalContext = createContext<GlobalSingleton>(null as unknown as GlobalSingleton);
 
 function GlobalContextHandler(props: PropsWithChildren) {
     const rupees = useState(125000);
+    const spot = useState(getDefaultSpot());
     const date = useState(Date.now());
     const dateJSReadOnly = useState(new Date(date[0]));
+    const dailyActions = useState(8);
     
     useEffect(() => {
         dateJSReadOnly[1](new Date(date[0]))
@@ -23,10 +26,14 @@ function GlobalContextHandler(props: PropsWithChildren) {
         [
             makeValidItemInstance("diesel", 99), 
             makeValidItemInstance("rice", 5),
-            makeValidItemInstance("egg", 12),
+            makeValidItemInstance("chickenEgg", 12),
             makeValidItemInstance("chicken", 1),
             makeValidItemInstance("chickenOffal", 1),
-            //makeValidItemInstance("chicken", 1),
+            makeValidItemInstance("seerFish", 1),
+            makeValidItemInstance("clamShellfish", 13),
+            makeValidItemInstance("squid", 3),
+            makeValidItemInstance("rohuFish", 1),
+            makeValidItemInstance("prawnShellfish", 24),
         ]
     );
 
@@ -47,8 +54,10 @@ function GlobalContextHandler(props: PropsWithChildren) {
     return (
         <GlobalContext.Provider value={{
             "rupees": rupees,
+            "spot": spot,
             "date": date,
             "dateJSReadOnly": dateJSReadOnly,
+            "dailyActions": dailyActions,
             "tooltipData": tooltipData,
             "inventoryTransferData": inventoryTransferData,
             "farmhouseInventory": farmhouseInventory,
@@ -66,7 +75,9 @@ export default GlobalContextHandler;
 export type State<T> = [T, React.Dispatch<React.SetStateAction<T>>];
 export type GlobalSingleton = {
     date: State<number>,
+    spot: State<Spot>,
     dateJSReadOnly: State<Date>,
+    dailyActions: State<number>,
     rupees: State<number>,
     tooltipData: State<TooltipData>,
     inventoryTransferData: State<InventoryTransferData>
@@ -79,6 +90,8 @@ export type GlobalSingleton = {
 
 export type SaveableGlobalSingleton = {
     date: State<number>,
+    dailyActions: State<number>,
+    spot: State<Spot>,
     rupees: State<number>,
     farmhouseInventory: State<ItemInstance[]>,
     farmhouseInventoryId: State<string>,

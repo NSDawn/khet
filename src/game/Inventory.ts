@@ -1,7 +1,7 @@
 import { useDeferredValue } from "react";
 import { State } from "../GlobalContextHandler";
 import { GlobalSingleton } from "../GlobalContextHandler";
-import { checkGrouping, cloneItemInstance, flipQuantity, ItemInstance, makeItemInstance } from "./Items";
+import { checkGrouping, cloneItemInstance, flipQuantity, ItemInstance, ItemRef, makeItemInstance, makeValidItemInstance } from "./Items";
 import { Grouping } from "./Items";
 
 export type InventoryData = {
@@ -125,4 +125,8 @@ export function checkValidPutInventory(invState: State<Inventory>, inventoryId: 
         }
     }
     return true;
+}
+
+export function getDebugInventory(quantity: number = 1): Inventory {
+    return Object.values(ItemRef).map((item) => makeValidItemInstance(item.itemId, quantity))
 }

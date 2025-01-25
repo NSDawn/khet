@@ -16,7 +16,7 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
     const [inventoryTransferData, setInventoryTransferData] = useGlobal().inventoryTransferData;
     const [mode, setMode] = useState(""); // "" is default state
     const modeButtons = [
-        { mode: "in", icon: "🔽" },
+        { mode: "in", icon: "📥" },
         { mode: "out10", icon: "🔼"},
         { mode: "outAll", icon: "⏫"},
         { mode: "trash", icon: "🚮"},

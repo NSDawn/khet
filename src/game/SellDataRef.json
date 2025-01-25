@@ -14,8 +14,8 @@
         "fluctuationVarianceOffsetSeed": 6,
         "fluctuationVarianceScalar": 1
     },
-    "egg" : {
-        "itemId": "egg",
+    "chickenEgg" : {
+        "itemId": "chickenEgg",
         "baseSellPrice": 5,
         "baseBuyPrice": 8
     },
@@ -38,6 +38,76 @@
         "itemId": "muttonOffal",
         "baseSellPrice": 240,
         "baseBuyPrice": 400
+    },
+    "anchovyFish": {
+        "itemId": "anchovyFish",
+        "baseSellPrice": 20,
+        "baseBuyPrice": 30
+    },
+    "bombayDuckFish": {
+        "itemId": "bombayDuckFish",
+        "baseSellPrice": 205,
+        "baseBuyPrice": 310
+    },
+    "hilsaFish": {
+        "itemId": "hilsaFish",
+        "baseSellPrice": 367,
+        "baseBuyPrice": 525
+    },
+    "seerFish": {
+        "itemId": "seerFish",
+        "baseSellPrice": 1020,
+        "baseBuyPrice": 1455
+    },
+    "ribbonFish": {
+        "itemId": "ribbonFish",
+        "baseSellPrice": 312,
+        "baseBuyPrice": 445
+    },
+    "pomfretFish": {
+        "itemId": "pomfretFish",
+        "baseSellPrice": 518,
+        "baseBuyPrice": 740
+    },
+    "rohuFish": {
+        "itemId": "rohuFish",
+        "baseSellPrice": 945,
+        "baseBuyPrice": 1350
+    },
+    "catlaFish": {
+        "itemId": "catlaFish",
+        "baseSellPrice": 63,
+        "baseBuyPrice": 90
+    },
+    "prawnShellfish": {
+        "itemId": "prawnShellfish",
+        "baseSellPrice": 8,
+        "baseBuyPrice": 14
+    },
+    "mudCrabShellfish": {
+        "itemId": "mudCrabShellfish",
+        "baseSellPrice": 174,
+        "baseBuyPrice": 352
+    },
+    "riverCrabShellfish": {
+        "itemId": "riverCrabShellfish",
+        "baseSellPrice": 235,
+        "baseBuyPrice": 460
+    },
+    "crabShellfish": {
+        "itemId": "prawnShellfish",
+        "baseSellPrice": 360,
+        "baseBuyPrice": 732
+    },
+    "clamShellfish": {
+        "itemId": "clamShellfish",
+        "baseSellPrice": 15,
+        "baseBuyPrice": 31
+    },
+    "squid": {
+        "itemId": "squid",
+        "baseSellPrice": 120,
+        "baseBuyPrice": 392
     },
     "diesel" : {
         "itemId": "diesel",

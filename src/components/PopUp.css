@@ -1,0 +1,32 @@
+section.pop-up {
+    flex: 0;
+    width: min-content;
+    border: var(--rgb-text) 2px solid;
+    outline: var(--rgb-bg) 15px solid;
+    animation: appear 0.10s linear;
+}
+@keyframes appear {
+    0% {
+        transform: scale(0.9);
+        outline: var(--rgb-bg) 1px solid;
+    }
+    65% {
+        outline: var(--rgb-bg) 20px solid;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+div.pop-up-outside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}

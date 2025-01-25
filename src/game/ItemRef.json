@@ -22,8 +22,8 @@
             }
         ]
     },
-    "egg": {
-        "itemId": "egg",
+    "chickenEgg": {
+        "itemId": "chickenEgg",
         "icon": "🥚",
         "tags": ["canSell", "nonVegetarian"],
         "groupSet": [
@@ -73,6 +73,28 @@
             }
         ]
     },
+    "anchovyFish": {
+        "itemId": "anchovyFish",
+        "icon": "🐟",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish", "seafood", "saltwater"]
+            }
+        ]
+    },
+    "bombayDuckFish": {
+        "itemId": "bombayDuckFish",
+        "icon": "🐟",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish", "seafood", "saltwater"]
+            }
+        ]
+    },
     "hilsaFish": {
         "itemId": "hilsaFish",
         "icon": "🐟",
@@ -80,7 +102,7 @@
         "groupSet": [
             {
                 "groupId": "animal",
-                "subgroupSet": ["fish"]
+                "subgroupSet": ["fish", "seafood", "saltwater"]
             }
         ]
     },
@@ -91,18 +113,18 @@
         "groupSet": [
             {
                 "groupId": "animal",
-                "subgroupSet": ["fish"]
+                "subgroupSet": ["fish", "seafood", "saltwater"]
             }
         ]
     },
-    "rohuFish": {
-        "itemId": "rohuFish",
-        "icon": "🐠",
+    "ribbonFish": {
+        "itemId": "ribbonFish",
+        "icon": "🐟",
         "tags": ["canSell", "nonVegetarian"],
         "groupSet": [
             {
                 "groupId": "animal",
-                "subgroupSet": ["fish"]
+                "subgroupSet": ["fish", "seafood", "saltwater"]
             }
         ]
     },
@@ -113,7 +135,106 @@
         "groupSet": [
             {
                 "groupId": "animal",
-                "subgroupSet": ["fish"]
+                "subgroupSet": ["fish", "seafood", "saltwater"]
+            }
+        ]
+    },
+    "rohuFish": {
+        "itemId": "rohuFish",
+        "icon": "🐠",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish", "seafood", "freshwater"]
+            }
+        ]
+    },
+    "basaFish": {
+        "itemId": "basaFish",
+        "icon": "🐟",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish", "seafood", "freshwater"]
+            }
+        ]
+    },
+    "catlaFish": {
+        "itemId": "catlaFish",
+        "icon": "🐠",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["fish", "seafood", "freshwater"]
+            }
+        ]
+    },
+    "prawnShellfish": {
+        "itemId": "prawnShellfish",
+        "icon": "🦐",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["shellfish", "seafood", "saltwater"]
+            }
+        ]
+    },
+    "riverCrabShellfish": {
+        "itemId": "riverCrabShellfish",
+        "icon": "🦀",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["shellfish", "seafood", "freshwater"]
+            }
+        ]
+    },
+    "mudCrabShellfish": {
+        "itemId": "mudCrabShellfish",
+        "icon": "🦀",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["shellfish", "seafood", "freshwater"]
+            }
+        ]
+    },
+    "crabShellfish": {
+        "itemId": "crabShellfish",
+        "icon": "🦀",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["shellfish", "seafood", "saltwater"]
+            }
+        ]
+    },
+    "clamShellfish": {
+        "itemId": "clamShellfish",
+        "icon": "🦪",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["shellfish", "seafood", "saltwater"]
+            }
+        ]
+    },
+    "squid": {
+        "itemId": "squid",
+        "icon": "🦑",
+        "tags": ["canSell", "nonVegetarian"],
+        "groupSet": [
+            {
+                "groupId": "animal",
+                "subgroupSet": ["seafood", "saltwater"]
             }
         ]
     },

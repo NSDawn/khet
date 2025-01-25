@@ -1,0 +1,10 @@
+button.debug-button.emoji-icon {
+    position: fixed;
+    font-size: 2rem !important;
+    left: 0.5rem;
+    top: 0.5rem;
+    transition: ease-in-out 0.15s;
+    &.enabled {
+        transform: rotate(90deg);
+    }
+}

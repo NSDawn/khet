@@ -1,0 +1,31 @@
+button.a-button, button.a-button:focus {
+    outline: none;
+
+    &:hover {
+        outline: none;
+        transform: scale(1.05);
+    }
+}
+
+div.map-display {
+    outline: var(--rgb-text) 2px;
+    aspect-ratio: 1.5;
+    width: 50vw;
+    outline: 3px var(--rgb-text) dashed;
+    position: relative;
+    /* overflow: hidden; */
+    padding: 0;
+    & .map-spot {
+        outline: 2px var(--rgb-text) solid;
+        background-color: var(--rgb-bg);
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3vw;
+        transition: ease-in-out 0.15s;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
