@@ -4,7 +4,24 @@ button.debug-button.emoji-icon {
     left: 0.5rem;
     top: 0.5rem;
     transition: ease-in-out 0.15s;
+    animation: disappear-slowly 3s forwards;
+    &:hover {
+        animation: none;
+    }
     &.enabled {
+        animation: none;
         transform: rotate(90deg);
+    }
+}
+
+@keyframes disappear-slowly {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

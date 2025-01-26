@@ -4,7 +4,7 @@ div.debug-console-history {
     background: none;
     color: var(--rgb-text);
     font-size: x-small;
-    outline: solid var(--rgb-text) 1px;
+    border: solid var(--rgb-text) 1px;
     padding: 0.25rem 0.5rem;
 }
 input.debug-console-input {

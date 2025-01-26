@@ -1,5 +1,5 @@
 .inventory-panel {
-    outline: solid var(--rgb-text) 1px;
+    border: solid var(--rgb-text) 1px;
     padding: 1rem;
     & .limits {
         text-align: right;

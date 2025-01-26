@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { State } from "../../GlobalContextHandler";
 import "./DebugSections.css";
 import { useEffect, useState } from "react";
+import StandardSection from "../StandardSection";
 
 export default function DebugInventorySection() {
     const { t } = useTranslation(); 
@@ -16,9 +17,9 @@ export default function DebugInventorySection() {
     }, [invState[0]])
 
     return (
-        <section>
-            <h2>DEBUG INVENTORY</h2>
+        <StandardSection title="Debug Inventory">
+            
             <InventoryPanel inventory={invState} inventoryId={invIdState}/>
-        </section>
+        </StandardSection>
     )
 }

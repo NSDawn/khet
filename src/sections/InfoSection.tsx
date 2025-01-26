@@ -8,6 +8,7 @@ import MoneyReadout from "../components/MoneyReadout";
 import { WeatherReadout } from "../components/WeatherReadout";
 import DailyActionsReadout from "../components/DailyActionsReadout";
 import { getDailyActionsLimit } from "../game/DailyActions";
+import StandardSection from "./StandardSection";
 
 export default function InfoSection() {
     
@@ -18,8 +19,8 @@ export default function InfoSection() {
     const [gameConfig, _] = G.gameConfig;
 
     return (
-        <section>
-            <h2>₹ {<MoneyReadout moneyState={G.rupees} />} </h2>
+        <StandardSection title={<>₹ <MoneyReadout moneyState={G.rupees} /></>}>
+            {/* <h2>₹ {<MoneyReadout moneyState={G.rupees} />} </h2> */}
             <h3>
                 <DailyActionsReadout dailyActions={G.dailyActions} dailyActionsLimit={getDailyActionsLimit()}></DailyActionsReadout>
             </h3>
@@ -28,6 +29,6 @@ export default function InfoSection() {
             </h4>    
             <h3><WeatherReadout date={dateJSReadOnly} temperatureOnly={false} /></h3>
             <InventoryPanel inventory={G.personalInventory} inventoryId={G.personalInventoryId}/>
-        </section>
+        </StandardSection>
     )
 }

@@ -1,0 +1,31 @@
+section.standard-section {
+    height: min-content;
+    & h2 {
+        margin-bottom: 0;
+    }
+    & div.title-area {
+        display: flex;
+        & button {
+            height: min-content;
+            margin-left: auto;
+            outline: none;
+        }
+        
+    }
+    & div.content {
+        height: 0; 
+        transform: scaleY(0.5);
+        transition: ease-in-out 0.15s;
+        overflow: hidden;
+    }
+    &.open {
+        height: auto;
+        & h2 {
+            margin-bottom: 1rem;
+        }
+        & div.content {
+            height: auto;
+            transform: scaleY(1);
+        }
+    }
+}

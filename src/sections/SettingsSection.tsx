@@ -3,6 +3,7 @@ import { trySetGameConfig } from "../game/GameConfig";
 import { useTranslation } from 'react-i18next';
 import i18n, { getLocales, getLocalesT } from "../i18n/i18n";
 import { getNumberFormats, getUnitsTemperature } from "../i18n/i18nNumeric";
+import StandardSection from "./StandardSection";
 
 export default function SettingsSection() {
     
@@ -19,8 +20,7 @@ export default function SettingsSection() {
     const localesT = getLocalesT();
 
     return (
-        <section>
-            <h2>{t("ui.settings.title")}</h2>
+        <StandardSection title={t("ui.settings.title")}>
             <div>
                 <label htmlFor="language-select">{t('ui.settings.language')}: </label>
                 <select id="language-select" onChange={handleChangeSelectLanguage} defaultValue={gameConfig.locale}>
@@ -57,7 +57,6 @@ export default function SettingsSection() {
                     }
                 </select>
             </div>
-            
-        </section>
+        </StandardSection>
     )
 }

@@ -4,6 +4,7 @@ import { putItemNaively } from "../../game/Inventory";
 import { useGlobal } from "../../GlobalContextHandler";
 import { trySetGameConfig } from "../../game/GameConfig";
 import { makeItemInstance } from "../../game/Items";
+import StandardSection from "../StandardSection";
 
 export default function DebugConsoleSection() {
 
@@ -90,12 +91,12 @@ export default function DebugConsoleSection() {
     }
     
     return (
-        <section>
+        <StandardSection title="Console">
             <div className="debug-console-history" dangerouslySetInnerHTML={{__html: consoleHistory}}>
                 
             </div>
             <input className="debug-console-input" type="text" value={inputText} onChange={e => setInputText(e.target.value)} onKeyDown={handleKeyDown} />
-        </section>
+        </StandardSection>
     )
 }
 
