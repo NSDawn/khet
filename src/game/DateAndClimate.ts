@@ -1,4 +1,7 @@
+import { GlobalSingleton } from "../GlobalContextHandler";
 import { getDailyVariance } from "./Items";
+import __WeatherTypesRef from "./WeatherTypesRef.json";
+const weatherTypeByTemperature = __WeatherTypesRef;
 
 export function getNumberOfDaysInMonth(monthZeroIndexed: number, year: number = 1): number {
     if (isLeapYear(year) && monthZeroIndexed === 1) return 29;
@@ -114,123 +117,12 @@ export function getWeatherType(date: Date): string {
     return "sunny";
 }
 
-const weatherTypeByTemperature = [
-    {
-        temperature: 35,
-        weatherTypes: [
-            {
-                daysUntilRain: 5,
-                weatherType: "arid"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "sultry"
-            },
-        ]
-    },
-    {
-        temperature: 30,
-        weatherTypes: [
-            {
-                daysUntilRain: 3,
-                weatherType: "sunny"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "cloudy"
-            },
-        ]
-    },
-    {
-        temperature: 25,
-        weatherTypes: [
-            {
-                daysUntilRain: 4,
-                weatherType: "sunny"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "cloudy"
-            },
-        ]
-    },
-    {
-        temperature: 20,
-        weatherTypes: [
-            {
-                daysUntilRain: 4,
-                weatherType: "sunny"
-            },
-            {
-                daysUntilRain: 2,
-                weatherType: "cloudy"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "hazy"
-            },
-        ]
-    },
-    {
-        temperature: 15,
-        weatherTypes: [
-            {
-                daysUntilRain: 6,
-                weatherType: "sunny"
-            },
-            {
-                daysUntilRain: 4,
-                weatherType: "cloudy"
-            },
-            {
-                daysUntilRain: 3,
-                weatherType: "hazy"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "overcast"
-            },
-        ]
-    },
-    {
-        temperature: 10,
-        weatherTypes: [
-            {
-                daysUntilRain: 7,
-                weatherType: "sunny"
-            },
-            {
-                daysUntilRain: 4,
-                weatherType: "cloudy"
-            },
-            {
-                daysUntilRain: 3,
-                weatherType: "hazy"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "overcast"
-            },
-        ]
-    },
-    {
-        temperature: -100,
-        weatherTypes: [
-            {
-                daysUntilRain: 7,
-                weatherType: "cloudy"
-            },
-            {
-                daysUntilRain: 5,
-                weatherType: "hazy"
-            },
-            {
-                daysUntilRain: 1,
-                weatherType: "overcast"
-            },
-        ]
-    },
-]
+export function incrementDayGlobal(G: GlobalSingleton) {
+    const [date, setDate] = G.date;
+    const millisecondsInADay = 1000 * 60 * 60 * 24;
+    setDate(date + millisecondsInADay);
+}
+
 
 
 

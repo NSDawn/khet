@@ -1,14 +1,15 @@
 import { useTranslation } from "react-i18next";
-import { avgTemperature, getTemperature, getWeather, getWeatherType, getWeatherTypeIcon } from "../game/DateAndClimate";
+import { avgTemperature, getTemperature, getWeather, getWeatherType, getWeatherTypeIcon, incrementDayGlobal } from "../game/DateAndClimate";
 import { useGlobal } from "../GlobalContextHandler";
 import { formatTemperature } from "../i18n/i18nNumeric";
 import { useEffect, useState } from "react";
 
 export function WeatherReadout(props: {date: Date, temperatureOnly: boolean}) {
     
-    const [gameConfig, setGameConfig] = useGlobal().gameConfig;
-    const [date, setDate] = useGlobal().date;
-    const [dateJSReadOnly, _] = useGlobal().dateJSReadOnly;
+    const G = useGlobal()
+    const [gameConfig, setGameConfig] = G.gameConfig;
+    const [date, setDate] = G.date;
+    const [dateJSReadOnly, _] = G.dateJSReadOnly;
     const { t } = useTranslation();
     const [weather, setWeather] = useState(getWeather(dateJSReadOnly));
 
@@ -27,7 +28,7 @@ export function WeatherReadout(props: {date: Date, temperatureOnly: boolean}) {
             <span className="emoji-icon">🔽</span>
             {formatTemperature(weather.temperature.low, gameConfig.unitTemperature, true)}
             &nbsp;<button
-                onClick={() => setDate(date + (24 * 60 * 60 * 1000))}
+                onClick={() => incrementDayGlobal(G)}
             >
                 {`->`}
             </button>
