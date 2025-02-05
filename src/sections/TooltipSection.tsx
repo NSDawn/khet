@@ -63,6 +63,12 @@ export function TooltipSection() {
             {tooltipData.type === "inventoryButton" ? <>
                 <span>{t(`ui.inventory.button.${tooltipData.id}`)}</span>
             </> :null}
+
+            {tooltipData.type === "farmlandSlot" ? <>
+                <span>
+                    {(tooltipData.otherData??[])[0]}
+                </span>
+            </> :null}
         </section>
     )
 }
@@ -72,7 +78,7 @@ export type TooltipData = {
     pageY: number,
     enabled: boolean,
     type?: string,
-    id?: string,
+    id?: string | null,
     otherData?: string[]
 }
 

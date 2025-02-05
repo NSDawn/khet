@@ -17,7 +17,6 @@ export function getDefaultGameConfig(): GameConfig {
 export function trySetGameConfig(G: GlobalSingleton, key: string, value: any): boolean {
     const [config, setConfig] = G.gameConfig;
     if (key in config) {
-        console.log(value);
         // ik what i'm doing mr.typescript
         const newConfig: any = {...config};
         newConfig[key] = value; 

@@ -1,0 +1,33 @@
+div.farmland-lot {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
+    border: 1px var(--rgb-text) solid;
+    
+    padding: 0.5rem 1rem;
+    & div.farmland-slot {
+        
+        border: 1px var(--rgb-text) solid;
+        display: flex;
+        padding: 0.5rem;
+        white-space: nowrap;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &:hover {
+            
+            transform: scale(1.1);
+        }
+        & .indicator {
+            font-size: 0.75rem;
+            &.progress-indicator {
+                font-family: var(--font-regular);
+                &.progress-indicator-total {
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}

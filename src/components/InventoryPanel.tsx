@@ -158,7 +158,7 @@ export default function InventoryPanel(props: {inventory: State<Inventory>, inve
                     className={`small-clickable-no-outline emoji-icon`}
                     onClick={() => {setSearchInput("")}}
                 >
-                    {(searchInput === "")? "🔎" : "ｘ"}
+                    {(searchInput === "")? "🔎" : "🗑︎"}
                 </button>
                 <input 
                     type="text" 

@@ -11,6 +11,28 @@
             }
         ]
     },
+    "chaff": {
+        "itemId": "chaff",
+        "icon": "🍃",
+        "tags": ["canSell"],
+        "groupSet": [
+            {
+                "groupId": "botanical",
+                "subgroupSet": ["byproduct"]
+            }
+        ]
+    },
+    "straw": {
+        "itemId": "straw",
+        "icon": "🍂",
+        "tags": ["canSell"],
+        "groupSet": [
+            {
+                "groupId": "botanical",
+                "subgroupSet": ["byproduct"]
+            }
+        ]
+    },
     "rice": {
         "itemId": "rice",
         "icon": "🌾",

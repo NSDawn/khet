@@ -4,6 +4,16 @@
         "baseSellPrice": 34,
         "baseBuyPrice": 43
     },
+    "chaff" : {
+        "itemId": "chaff",
+        "baseSellPrice": 1,
+        "baseBuyPrice": 2
+    },
+    "straw" : {
+        "itemId": "straw",
+        "baseSellPrice": 3,
+        "baseBuyPrice": 7
+    },
     "rice" : {
         "itemId": "rice",
         "baseSellPrice": 32,

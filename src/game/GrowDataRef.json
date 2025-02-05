@@ -1,0 +1,139 @@
+{
+    "wheat": {
+        "seedItemId": "wheat",
+        "mainYieldItemId": "wheat",
+        "icon": "🌾",
+        "stages": [
+            {
+                "stageId": "growing",
+                "lengthDays": 75,
+                "lengthDaysVariance": {
+                    "rollUpto": 15,
+                    "results": [-4, -3, -3, -2, -2, -1, -1, 0, 1, 1, 2, 2, 3, 3, 4]
+                },
+                "temperatureHardiness": {
+                    "range": {"high": 36, "low": 4},
+                    "allowance": 2
+                },
+                "waterHardiness": {
+                    "range": {"high": 65, "low": 24}
+                },
+                "drops" : [
+                    {
+                        "rollUpto": 5,
+                        "rolls": 4,
+                        "results": [
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1},
+                            null,
+                            null
+                        ]
+                    }
+                ]
+            },
+            {
+                "stageId": "heading",
+                "lengthDays": 32,
+                "lengthDaysVariance": {
+                    "rollUpto": 5,
+                    "results": [-2, -1, 0, 1, 2]
+                },
+                "temperatureHardiness": {
+                    "range": {"high": 36, "low": 10},
+                    "allowance": 1
+                },
+                "waterHardiness": {
+                    "range": {"high": 34, "low": 24}
+                },
+                "drops" : [
+                    {
+                        "rollUpto": 5,
+                        "rolls": 1,
+                        "results": [
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1},
+                            null,
+                            null
+                        ]
+                    },
+                    {
+                        "rollUpto": 5,
+                        "rolls": 5,
+                        "results": [
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1}
+                        ]
+                    }
+                ]
+            },
+            {
+                "stageId": "ready",
+                "lengthDays": 14,
+                "lengthDaysVariance": {
+                    "rollUpto": 3,
+                    "results": [-1, 0, 1]
+                },
+                "temperatureHardiness": {
+                    "range": {"high": 50, "low": 0},
+                    "allowance": 0
+                },
+                "waterHardiness": {
+                    "range": {"high": 2, "low": 0}
+                },
+                "drops" : [
+                    {
+                        "rollUpto": 5,
+                        "rolls": 8,
+                        "results": [
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "chaff", "quantity": 2},
+                            {"itemId": "straw", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1},
+                            {"itemId": "straw", "quantity": 2}
+                        ]
+                    },
+                    {
+                        "rollUpto": 1,
+                        "rolls": 2,
+                        "results": [
+                            {"itemId": "wheat", "quantity": 1}
+                        ]
+                    },
+                    {
+                        "rollUpto": 5,
+                        "rolls": 6,
+                        "results": [
+                            {"itemId": "wheat", "quantity": 1},
+                            {"itemId": "wheat", "quantity": 1},
+                            {"itemId": "wheat", "quantity": 2},
+                            null,
+                            null
+                        ]
+                    }
+                ]
+            },
+            {
+                "stageId": "ruined",
+                "drops" : [
+                    {
+                        "rollUpto": 5,
+                        "rolls": 4,
+                        "results": [
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "chaff", "quantity": 1},
+                            {"itemId": "straw", "quantity": 1},
+                            null,
+                            null
+                        ]
+                    }
+                ]
+            }
+            
+        ]
+    }   
+}

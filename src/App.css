@@ -164,3 +164,38 @@ h2 {
 h3 {
   font-size: 1.25rem;
 }
+
+@keyframes intoxicated {
+  0% {
+    transform: rotate(0deg) translateX(0vw) translateY(0vh);
+    font-size: 100%;
+  }
+  20% {
+    transform: rotate(20deg) translateX(-1vw) translateY(3vh);
+  }
+  40% {
+    transform: rotate(5deg) translateX(-4vw) translateY(-1vh);
+    font-size: 120%;
+  }
+  60% {
+    transform: rotate(-10deg) translateX(0vw) translateY(3vh);
+  }
+  80% {
+    transform: rotate(-5deg) translateX(-2vw) translateY(-2vh);
+    font-size: 80%;
+  }
+  100% {
+    transform: rotate(0deg) translateX(0vw) translateY(0vh);
+  }
+}
+
+/* section{
+  animation: intoxicated 8s linear infinite !important;
+}
+section.pop-up {
+  animation: intoxicated 10s linear infinite !important;
+}
+header {
+  animation: intoxicated 12s linear infinite !important;
+  animation-delay: 2s;
+} */

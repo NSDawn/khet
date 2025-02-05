@@ -5,15 +5,20 @@ import InventorySection from "../sections/InventorySection.tsx";
 import DebugConsoleSection from "../sections/debug/DebugConsoleSection.tsx";
 import Header from "./Header.tsx";
 import { TooltipSection } from "../sections/TooltipSection.tsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { changeLanguage } from "i18next";
 import DebugButton from "../components/debug/DebugButton.tsx";
 import DebugInventorySection from "../sections/debug/DebugInventorySection.tsx";
+import LotSection from "../sections/LotSection.tsx";
+import { getDefaultFarmlandLot } from "../game/Lots.ts";
+import DebugFarmlandLotSection from "../sections/debug/DebugFarmlandLotSection.tsx";
 
 export default function Main() {
     const G = useGlobal()
     const [gameConfig, _] = G.gameConfig;
     const [spot, __] = G.spot;
+
+    const [farmlandLot, setFarmlandLot] = useState(JSON.stringify(getDefaultFarmlandLot()));
     
     useEffect(() => {
         changeLanguage(gameConfig.locale)
@@ -34,9 +39,7 @@ export default function Main() {
                 : null}
                 {spot.local === "plot1" ?
                     <>
-                        <section>
-                            PLOT 1 GOES HERE
-                        </section>
+                        <LotSection title={"butts"} lotData={JSON.parse(farmlandLot)} setDataJSONFn={setFarmlandLot}/>
                     </>
                 : null}
                 </>
@@ -45,7 +48,13 @@ export default function Main() {
                 gameConfig.debug && gameConfig.showDebugConsole ? 
                 <>
                     <DebugConsoleSection /> 
-                    <DebugInventorySection />
+                    {spot.local === "farmhouse"?
+                        <DebugInventorySection />
+                    : null}
+                    {spot.local === "plot1"?
+                        <DebugFarmlandLotSection />
+                    : null}
+                    
                 </>
             : null}
             <DebugButton />
