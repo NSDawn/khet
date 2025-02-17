@@ -73,7 +73,9 @@ export function TooltipSection() {
 
             {tooltipData.type === "mapSpot" ? <>
                 <span>
-                    {t(`map.${tooltipData.id ?? "missing"}`)}
+                    {tooltipData.id === "main.playerFarm" ? 
+                        gameConfig.playerFarmName
+                    : t(`map.${tooltipData.id}`)}
                 </span>
             </> :null}
         </section>

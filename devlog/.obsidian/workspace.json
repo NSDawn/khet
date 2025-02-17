@@ -51,12 +51,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "tickets/a0018-v2 Add tooltip for Map.md",
+                "file": "tickets/a0010-d2 Create favicon and edit title.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "a0018-v2 Add tooltip for Map"
+              "title": "a0010-d2 Create favicon and edit title"
             }
           }
         ],
@@ -204,9 +204,9 @@
   },
   "active": "c871170497433038",
   "lastOpenFiles": [
-    "Untitled 1.md",
-    "tickets/a0018-v2 Add tooltip for Map.md",
     "ticket-tracker.md",
+    "tickets/a0018-v2 Add tooltip for Map.md",
+    "Untitled 1.md",
     "tickets/a0010-d2 Create favicon and edit title.md",
     "tickets/a0011-d2 Add variance to temperature.md",
     "tickets/a0012-b1 Temperature can be illogical.md",

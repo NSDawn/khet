@@ -1,4 +1,6 @@
 {
+    "app.webptitle": "Khet",
+
     "debug.locale": "English (India)",
 
     "ui.settings.title": "Settings",
@@ -74,6 +76,7 @@
     
     "ui.dailyActions" : "Actions",
 
+    "map.main.playerFarm": "Your Farm",
     "map.main.playerFarm.farmhouse": "Farmhouse",
     "map.main.playerFarm.plot1": "Plot 1",
     "map.main.playerFarm.plot2": "Plot 2",
