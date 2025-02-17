@@ -11,6 +11,7 @@ export default function MapDisplay(props: {type: "domain" | "world" | "local", o
     else if (props.type === "local") mapKey = props.selectedSpot.local;
     
     const mapData = getMapData(mapKey);
+    const [tooltipData, setTooltipData] = useGlobal().tooltipData;
 
     return (
         <div className="map-display">
@@ -23,6 +24,8 @@ export default function MapDisplay(props: {type: "domain" | "world" | "local", o
                         width: `${iSpot.size.x / 3}vw`,
                         height: `${iSpot.size.y / 3}vw`,
                     }}
+                        onMouseMove={(e) => setTooltipData({...tooltipData, type: "mapSpot", id: `${getMapId(iSpot.destination, props.type)}`, otherData: [], pageX: e.pageX, pageY: e.pageY, enabled: true})}
+                        onMouseOut={() => setTooltipData({...tooltipData, enabled: false})}
                         onClick={() => props.onSelectFn(iSpot.destination)}
                     >
                         {iSpot.icon}
@@ -31,4 +34,11 @@ export default function MapDisplay(props: {type: "domain" | "world" | "local", o
             }
         </div>
     )
+}
+
+function getMapId(spot: Spot, type: "domain" | "world" | "local") {
+    let out = spot.domain;
+    if (type == "domain" || type == "world" || type == "local") out += `.${spot.world}`
+    if (type == "world" || type == "local") out += `.${spot.local}`
+    return out;
 }

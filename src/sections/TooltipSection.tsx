@@ -19,6 +19,7 @@ export function TooltipSection() {
         setTooltipStyle({
             left: `${tooltipData.pageX + 10}px`,
             top: `${tooltipData.pageY + 10}px`,
+            zIndex: 999,
         })
         setEnabled(tooltipData.enabled);
     }, [tooltipData])
@@ -67,6 +68,12 @@ export function TooltipSection() {
             {tooltipData.type === "farmlandSlot" ? <>
                 <span>
                     {(tooltipData.otherData??[])[0]}
+                </span>
+            </> :null}
+
+            {tooltipData.type === "mapSpot" ? <>
+                <span>
+                    {t(`map.${tooltipData.id ?? "missing"}`)}
                 </span>
             </> :null}
         </section>

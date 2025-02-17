@@ -51,12 +51,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ticket-tracker.md",
+                "file": "tickets/a0018-v2 Add tooltip for Map.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ticket-tracker"
+              "title": "a0018-v2 Add tooltip for Map"
             }
           }
         ],
@@ -79,7 +79,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -198,20 +199,27 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-kanban:Create new board": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "c871170497433038",
   "lastOpenFiles": [
-    "tickets/a0023-v3 Add food spoilage.md",
+    "Untitled 1.md",
+    "tickets/a0018-v2 Add tooltip for Map.md",
     "ticket-tracker.md",
+    "tickets/a0010-d2 Create favicon and edit title.md",
+    "tickets/a0011-d2 Add variance to temperature.md",
+    "tickets/a0012-b1 Temperature can be illogical.md",
+    "tickets/a0013-b1 Item ID limit not working.md",
+    "tickets/a0014-b2 Tooltip does not account for scroll.md",
+    "tickets/a0019-v2 Add location indicator outline on Map.md",
     "tickets/a0028-v3 Saving and loading Saves.md",
+    "tickets/a0023-v3 Add food spoilage.md",
+    "Untitled.md",
     "tickets/a0029-d2 Create circumstantial spoilage.md",
     "tickets/a0015-r1 Rework weatherTypeByTemperature to pull from a JSON.md",
     "tickets/a0030-d3 Design interactions with farming.md",
     "tickets/version-system.md",
-    "Untitled.md",
     "tickets/a0008-v1 Implement function incrementDay().md",
     "tickets/a0006-d3 Basic crop support 1.md",
     "tickets/a0007-v3 Basic crop support 2.md",
@@ -221,16 +229,8 @@
     "tickets/a0025-v1 Add types for Mail.md",
     "Untitled",
     "tickets/a0017-r2 Refactor <section>s to be their own component.md",
-    "tickets/a0010-d2 Create favicon and edit title.md",
-    "tickets/a0011-d2 Add variance to temperature.md",
-    "tickets/a0012-b1 Temperature can be illogical.md",
-    "tickets/a0013-b1 Item ID limit not working.md",
-    "tickets/a0014-b2 Tooltip does not account for scroll.md",
-    "tickets/a0018-v2 Add tooltip for Map.md",
-    "tickets/a0019-v2 Add location indicator outline on Map.md",
     "tickets/a0020-b1 Inventory changes width if searched.md",
     "tickets/a0021-b1 Main height should be as tight as possible.md",
-    "tickets/a0022-v1 Add temperature readouts to Inventories.md",
     "a0024-d1 Add mailbox location where items can be recieved",
     "dev/versions/a/a.0/a.0.1/opened",
     "dev/versions/a/a.0/a.0.1",

@@ -47,14 +47,14 @@ export default function MapReadout() {
                 className="a-button"
                 onClick={openDomainMap}
             >
-                <h2>{spot.world === "playerFarm" ? gameConfig.playerFarmName : t(`map.world.${spot.world}`)}</h2>
+                <h2>{spot.world === "playerFarm" ? gameConfig.playerFarmName : t(`map.${spot.domain}.${spot.world}`)}</h2>
             </button>
             <br />
             <button 
                 className="a-button"
                 onClick={() => {openWorldMap(spot.world)}}
             >
-                <h1>{t(`map.local.${spot.local}`)}</h1>
+                <h1>{t(`map.${spot.domain}.${spot.world}.${spot.local}`)}</h1>
             </button>
         </>
     )

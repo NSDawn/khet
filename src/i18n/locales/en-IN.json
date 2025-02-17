@@ -74,10 +74,10 @@
     
     "ui.dailyActions" : "Actions",
 
-    "map.local.farmhouse": "Farmhouse",
-    "map.local.plot1": "Plot 1",
-    "map.local.plot2": "Plot 2",
-    "map.local.plot3": "Plot 3",
+    "map.main.playerFarm.farmhouse": "Farmhouse",
+    "map.main.playerFarm.plot1": "Plot 1",
+    "map.main.playerFarm.plot2": "Plot 2",
+    "map.main.playerFarm.plot3": "Plot 3",
 
     "climate.weather.arid": "Arid",
     "climate.weather.sultry": "Sultry",

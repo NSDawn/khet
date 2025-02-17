@@ -1,5 +1,5 @@
 section.tooltip {
-    z-index: 999;
+    
     position: absolute;
     display: none;
     padding: 0.5rem;
